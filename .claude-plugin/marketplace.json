@@ -1,0 +1,895 @@
+{
+  "name": "maschinenlesbar",
+  "owner": {
+    "name": "Sebastian Schürmann",
+    "email": "sebs@2xs.org",
+    "url": "https://github.com/maschinenlesbar-org"
+  },
+  "metadata": {
+    "description": "Claude Code skills for open German public-sector APIs, each powered by a @maschinenlesbar.org CLI"
+  },
+  "plugins": [
+    {
+      "name": "abgeordnetenwatch",
+      "source": {
+        "source": "github",
+        "repo": "maschinenlesbar-org/abgeordnetenwatch-cli",
+        "ref": "v0.0.7"
+      },
+      "description": "Pull a politician's roll-call voting record, surface disclosed side income, and break down how a parliament voted on a bill — all over the open, key-free abgeordnetenwatch.de API (CC0 data) via the abgeordnetenwatch-cli.",
+      "author": {
+        "name": "Sebastian Schürmann",
+        "email": "sebs@2xs.org"
+      },
+      "license": "AGPL-3.0-or-later",
+      "repository": "https://github.com/maschinenlesbar-org/abgeordnetenwatch-cli",
+      "homepage": "https://github.com/maschinenlesbar-org/abgeordnetenwatch-cli#readme",
+      "category": "transparency",
+      "keywords": [
+        "abgeordnetenwatch",
+        "bundestag",
+        "parliament",
+        "politicians",
+        "voting-record",
+        "sidejobs",
+        "transparency",
+        "open-data",
+        "germany"
+      ]
+    },
+    {
+      "name": "ausbildungssuche",
+      "source": {
+        "source": "github",
+        "repo": "maschinenlesbar-org/ausbildungssuche-cli",
+        "ref": "v0.0.5"
+      },
+      "description": "Find apprenticeships & training near a place, brief a single offer from its id, and profile the training market across regions — over the Bundesagentur für Arbeit Ausbildungssuche API via the ausbildungssuche-cli.",
+      "author": {
+        "name": "Sebastian Schürmann",
+        "email": "sebs@2xs.org"
+      },
+      "license": "AGPL-3.0-or-later",
+      "repository": "https://github.com/maschinenlesbar-org/ausbildungssuche-cli",
+      "homepage": "https://github.com/maschinenlesbar-org/ausbildungssuche-cli#readme",
+      "category": "education",
+      "keywords": [
+        "ausbildungssuche",
+        "arbeitsagentur",
+        "ausbildung",
+        "apprenticeship",
+        "vocational-training",
+        "weiterbildung",
+        "umschulung",
+        "bildungsgutschein",
+        "germany",
+        "bund.dev"
+      ]
+    },
+    {
+      "name": "autobahn",
+      "source": {
+        "source": "github",
+        "repo": "maschinenlesbar-org/autobahn-cli",
+        "ref": "v0.0.7"
+      },
+      "description": "Brief motorway disruptions before a drive, plan EV charging stops along a route, and export any Autobahn service as GeoJSON — all over the open, key-free Autobahn App API via the autobahn-cli.",
+      "author": {
+        "name": "Sebastian Schürmann",
+        "email": "sebs@2xs.org"
+      },
+      "license": "AGPL-3.0-or-later",
+      "repository": "https://github.com/maschinenlesbar-org/autobahn-cli",
+      "homepage": "https://github.com/maschinenlesbar-org/autobahn-cli#readme",
+      "category": "traffic",
+      "keywords": [
+        "autobahn",
+        "verkehr",
+        "traffic",
+        "roadworks",
+        "closures",
+        "ev-charging",
+        "geojson",
+        "germany",
+        "bund.dev"
+      ]
+    },
+    {
+      "name": "bundeshaushalt",
+      "source": {
+        "source": "github",
+        "repo": "maschinenlesbar-org/bundeshaushalt-cli",
+        "ref": "v0.0.6"
+      },
+      "description": "Break the German federal budget down by ministry, economic group or function, compare planned vs. realised (Soll/Ist) figures, and build multi-year spending trends — all over the open, key-free bundeshaushalt.de portal via the bundeshaushalt-cli.",
+      "author": {
+        "name": "Sebastian Schürmann",
+        "email": "sebs@2xs.org"
+      },
+      "license": "AGPL-3.0-or-later",
+      "repository": "https://github.com/maschinenlesbar-org/bundeshaushalt-cli",
+      "homepage": "https://github.com/maschinenlesbar-org/bundeshaushalt-cli#readme",
+      "category": "finance",
+      "keywords": [
+        "bundeshaushalt",
+        "bmf",
+        "budget",
+        "haushalt",
+        "finance",
+        "soll-ist",
+        "open-data",
+        "germany",
+        "bund.dev"
+      ]
+    },
+    {
+      "name": "bundesrat",
+      "source": {
+        "source": "github",
+        "repo": "maschinenlesbar-org/bundesrat-cli",
+        "ref": "v0.0.6"
+      },
+      "description": "Follow the Bundesrat: the current plenary sitting's agenda and Drucksachen, the members (by Land or party), and committee dates — via the bundesrat-cli. Surfaces only openly-licensed data.",
+      "author": {
+        "name": "Sebastian Schürmann",
+        "email": "sebs@2xs.org"
+      },
+      "license": "AGPL-3.0-or-later",
+      "repository": "https://github.com/maschinenlesbar-org/bundesrat-cli",
+      "homepage": "https://github.com/maschinenlesbar-org/bundesrat-cli#readme",
+      "category": "government",
+      "keywords": [
+        "bundesrat",
+        "plenum",
+        "tagesordnung",
+        "drucksache",
+        "laender",
+        "parlament",
+        "germany",
+        "bund.dev"
+      ]
+    },
+    {
+      "name": "bundeswahl",
+      "source": {
+        "source": "github",
+        "repo": "maschinenlesbar-org/bundeswahlleiterin-cli",
+        "ref": "v0.0.5"
+      },
+      "description": "Query the official Bundestagswahl 2025 result — first/second votes by Bund, Land or Wahlkreis, filtered by party — plus the parties, the 299 constituencies and structural data, via the bundeswahlleiterin-cli. Open data (Datenlizenz Deutschland).",
+      "author": {
+        "name": "Sebastian Schürmann",
+        "email": "sebs@2xs.org"
+      },
+      "license": "AGPL-3.0-or-later",
+      "repository": "https://github.com/maschinenlesbar-org/bundeswahlleiterin-cli",
+      "homepage": "https://github.com/maschinenlesbar-org/bundeswahlleiterin-cli#readme",
+      "category": "government",
+      "keywords": [
+        "bundeswahlleiterin",
+        "bundestagswahl",
+        "wahl",
+        "election",
+        "wahlkreis",
+        "germany",
+        "opendata",
+        "bund.dev"
+      ]
+    },
+    {
+      "name": "destatis-genesis",
+      "source": {
+        "source": "github",
+        "repo": "maschinenlesbar-org/destatis-genesis-cli",
+        "ref": "v0.0.5"
+      },
+      "description": "Find the right official-statistics object, fetch and decode its data, and export tables to CSV/Excel — over the DESTATIS GENESIS-Online API via the destatis-genesis-cli.",
+      "author": {
+        "name": "Sebastian Schürmann",
+        "email": "sebs@2xs.org"
+      },
+      "license": "AGPL-3.0-or-later",
+      "repository": "https://github.com/maschinenlesbar-org/destatis-genesis-cli",
+      "homepage": "https://github.com/maschinenlesbar-org/destatis-genesis-cli#readme",
+      "category": "government",
+      "keywords": [
+        "destatis",
+        "genesis",
+        "genesis-online",
+        "statistik",
+        "official-statistics",
+        "germany",
+        "opendata",
+        "bund.dev"
+      ]
+    },
+    {
+      "name": "ddb",
+      "source": {
+        "source": "github",
+        "repo": "maschinenlesbar-org/deutsche-digitale-bibliothek-cli",
+        "ref": "v0.0.4"
+      },
+      "description": "Search Germany's digitised cultural heritage, explore facet distributions, and fetch an object's full detail — over the public v2 Deutsche Digitale Bibliothek API via the deutsche-digitale-bibliothek-cli. No API key required.",
+      "author": {
+        "name": "Sebastian Schürmann",
+        "email": "sebs@2xs.org"
+      },
+      "license": "AGPL-3.0-or-later",
+      "repository": "https://github.com/maschinenlesbar-org/deutsche-digitale-bibliothek-cli",
+      "homepage": "https://github.com/maschinenlesbar-org/deutsche-digitale-bibliothek-cli#readme",
+      "category": "government",
+      "keywords": [
+        "ddb",
+        "deutsche-digitale-bibliothek",
+        "cultural-heritage",
+        "glam",
+        "archives",
+        "museums",
+        "libraries",
+        "germany",
+        "bund.dev"
+      ]
+    },
+    {
+      "name": "dip-bundestag",
+      "source": {
+        "source": "github",
+        "repo": "maschinenlesbar-org/dip-bundestag-cli",
+        "ref": "v0.0.7"
+      },
+      "description": "Track a Bundestag legislative procedure end to end, profile a member, and digest Drucksachen / Plenarprotokolle with full text — all over the Bundestag DIP API via the dip-bundestag-cli.",
+      "author": {
+        "name": "Sebastian Schürmann",
+        "email": "sebs@2xs.org"
+      },
+      "license": "AGPL-3.0-or-later",
+      "repository": "https://github.com/maschinenlesbar-org/dip-bundestag-cli",
+      "homepage": "https://github.com/maschinenlesbar-org/dip-bundestag-cli#readme",
+      "category": "government",
+      "keywords": [
+        "dip",
+        "bundestag",
+        "parlament",
+        "drucksache",
+        "plenarprotokoll",
+        "vorgang",
+        "gesetzgebung",
+        "germany",
+        "bund.dev"
+      ]
+    },
+    {
+      "name": "dwd",
+      "source": {
+        "source": "github",
+        "repo": "maschinenlesbar-org/dwd-cli",
+        "ref": "v0.0.7"
+      },
+      "description": "Brief the current German weather warnings, decode a DWD station forecast into real units, export warning areas as GeoJSON, and cross-check official warnings against crowd reports — all over the open, key-free DWD Warnwetter app API via the dwd-cli.",
+      "author": {
+        "name": "Sebastian Schürmann",
+        "email": "sebs@2xs.org"
+      },
+      "license": "AGPL-3.0-or-later",
+      "repository": "https://github.com/maschinenlesbar-org/dwd-cli",
+      "homepage": "https://github.com/maschinenlesbar-org/dwd-cli#readme",
+      "category": "weather",
+      "keywords": [
+        "dwd",
+        "wetter",
+        "weather",
+        "warnings",
+        "warnwetter",
+        "forecast",
+        "geojson",
+        "germany",
+        "bund.dev"
+      ]
+    },
+    {
+      "name": "entgeltatlas",
+      "source": {
+        "source": "github",
+        "repo": "maschinenlesbar-org/entgeltatlas-cli",
+        "ref": "v0.0.4"
+      },
+      "description": "Look up what a German occupation earns, compare salaries across gender/region/level, and resolve the KldB and dimension codes — over the Bundesagentur für Arbeit Entgeltatlas API via the entgeltatlas-cli.",
+      "author": {
+        "name": "Sebastian Schürmann",
+        "email": "sebs@2xs.org"
+      },
+      "license": "AGPL-3.0-or-later",
+      "repository": "https://github.com/maschinenlesbar-org/entgeltatlas-cli",
+      "homepage": "https://github.com/maschinenlesbar-org/entgeltatlas-cli#readme",
+      "category": "government",
+      "keywords": [
+        "entgeltatlas",
+        "entgelt",
+        "gehalt",
+        "salary",
+        "arbeitsagentur",
+        "kldb",
+        "statistik",
+        "germany",
+        "bund.dev"
+      ]
+    },
+    {
+      "name": "fim-portal",
+      "source": {
+        "source": "github",
+        "repo": "maschinenlesbar-org/fim-portal-cli",
+        "ref": "v0.0.9"
+      },
+      "description": "Assemble service dossiers, lay out data-schema form blueprints, audit schema quality, and find reusable data fields — all over the open, key-free FIM Portal API via the fim-portal-cli.",
+      "author": {
+        "name": "Sebastian Schürmann",
+        "email": "sebs@2xs.org"
+      },
+      "license": "AGPL-3.0-or-later",
+      "repository": "https://github.com/maschinenlesbar-org/fim-portal-cli",
+      "homepage": "https://github.com/maschinenlesbar-org/fim-portal-cli#readme",
+      "category": "government",
+      "keywords": [
+        "fim",
+        "fimportal",
+        "xdatenfelder",
+        "xzufi",
+        "xprozess",
+        "leistungskatalog",
+        "fitko",
+        "ozg",
+        "egovernment",
+        "germany",
+        "bund.dev"
+      ]
+    },
+    {
+      "name": "fit-connect",
+      "source": {
+        "source": "github",
+        "repo": "maschinenlesbar-org/fit-connect-cli",
+        "ref": "v0.0.5"
+      },
+      "description": "Resolve which German authority is responsible for a public service in a given place, look up area codes (ags/ars/areaId), and build citizen-facing service briefings — all over the open, key-free FIT-Connect Routing API via the fit-connect-cli.",
+      "author": {
+        "name": "Sebastian Schürmann",
+        "email": "sebs@2xs.org"
+      },
+      "license": "AGPL-3.0-or-later",
+      "repository": "https://github.com/maschinenlesbar-org/fit-connect-cli",
+      "homepage": "https://github.com/maschinenlesbar-org/fit-connect-cli#readme",
+      "category": "government",
+      "keywords": [
+        "fit-connect",
+        "fitko",
+        "routing",
+        "zustellpunkt",
+        "verwaltung",
+        "leistungskatalog",
+        "pvog",
+        "germany"
+      ]
+    },
+    {
+      "name": "fragdenstaat",
+      "source": {
+        "source": "github",
+        "repo": "maschinenlesbar-org/fragdenstaat-cli",
+        "ref": "v0.0.7"
+      },
+      "description": "Find and analyse FOI requests, look up the right authority, explore the German FOI legal landscape, and dig out and export released documents — all over the public, key-free FragDenStaat.de API via the fragdenstaat-cli.",
+      "author": {
+        "name": "Sebastian Schürmann",
+        "email": "sebs@2xs.org"
+      },
+      "license": "AGPL-3.0-or-later",
+      "repository": "https://github.com/maschinenlesbar-org/fragdenstaat-cli",
+      "homepage": "https://github.com/maschinenlesbar-org/fragdenstaat-cli#readme",
+      "category": "government",
+      "keywords": [
+        "fragdenstaat",
+        "froide",
+        "informationsfreiheit",
+        "freedom-of-information",
+        "foi",
+        "ifg",
+        "uig",
+        "vig",
+        "transparency",
+        "opendata",
+        "germany",
+        "bund.dev"
+      ]
+    },
+    {
+      "name": "govdata",
+      "source": {
+        "source": "github",
+        "repo": "maschinenlesbar-org/govdata-cli",
+        "ref": "v0.0.6"
+      },
+      "description": "Find and rank open German government datasets, build catalogue statistics with CKAN facets, and harvest downloadable resources into a manifest — all over the open, key-free GovData CKAN API via the govdata-cli.",
+      "author": {
+        "name": "Sebastian Schürmann",
+        "email": "sebs@2xs.org"
+      },
+      "license": "AGPL-3.0-or-later",
+      "repository": "https://github.com/maschinenlesbar-org/govdata-cli",
+      "homepage": "https://github.com/maschinenlesbar-org/govdata-cli#readme",
+      "category": "data",
+      "keywords": [
+        "govdata",
+        "ckan",
+        "open-data",
+        "opendata",
+        "catalogue",
+        "datasets",
+        "facets",
+        "germany",
+        "bund.dev"
+      ]
+    },
+    {
+      "name": "hochwasser",
+      "source": {
+        "source": "github",
+        "repo": "maschinenlesbar-org/hochwasserzentralen-cli",
+        "ref": "v0.0.3"
+      },
+      "description": "Check Germany's official flood warnings and the flood classification at ~1200 gauges, get a per-state situation overview, and export warning areas or gauges as GeoJSON — all over the open, key-free LHP-PublicAPI via the hochwasserzentralen-cli.",
+      "author": {
+        "name": "Sebastian Schürmann",
+        "email": "sebs@2xs.org"
+      },
+      "license": "AGPL-3.0-or-later",
+      "repository": "https://github.com/maschinenlesbar-org/hochwasserzentralen-cli",
+      "homepage": "https://github.com/maschinenlesbar-org/hochwasserzentralen-cli#readme",
+      "category": "data",
+      "keywords": [
+        "hochwasser",
+        "hochwasserzentralen",
+        "lhp",
+        "flood",
+        "flood-warning",
+        "cap",
+        "pegel",
+        "geojson",
+        "germany",
+        "bund.dev"
+      ]
+    },
+    {
+      "name": "jobsuche",
+      "source": {
+        "source": "github",
+        "repo": "maschinenlesbar-org/jobsuche-cli",
+        "ref": "v0.0.5"
+      },
+      "description": "Scan the German job market for a role/region, run a ranked job hunt with full-detail enrichment, and watch a specific employer's openings — all over the open Bundesagentur für Arbeit Jobsuche API via the jobsuche-cli.",
+      "author": {
+        "name": "Sebastian Schürmann",
+        "email": "sebs@2xs.org"
+      },
+      "license": "AGPL-3.0-or-later",
+      "repository": "https://github.com/maschinenlesbar-org/jobsuche-cli",
+      "homepage": "https://github.com/maschinenlesbar-org/jobsuche-cli#readme",
+      "category": "jobs",
+      "keywords": [
+        "jobsuche",
+        "arbeitsagentur",
+        "jobboerse",
+        "jobs",
+        "employment",
+        "labour-market",
+        "recruiting",
+        "germany",
+        "bund.dev"
+      ]
+    },
+    {
+      "name": "ladesaeulen",
+      "source": {
+        "source": "github",
+        "repo": "maschinenlesbar-org/ladesaeulenregister-cli",
+        "ref": "v0.0.4"
+      },
+      "description": "Find, count and map public EV charging stations in Germany — by place, operator, connector, capacity or nearby a point — from the Bundesnetzagentur's Ladesäulenregister, via the ladesaeulenregister-cli.",
+      "author": {
+        "name": "Sebastian Schürmann",
+        "email": "sebs@2xs.org"
+      },
+      "license": "AGPL-3.0-or-later",
+      "repository": "https://github.com/maschinenlesbar-org/ladesaeulenregister-cli",
+      "homepage": "https://github.com/maschinenlesbar-org/ladesaeulenregister-cli#readme",
+      "category": "government",
+      "keywords": [
+        "ladesaeulenregister",
+        "ladestationen",
+        "ev-charging",
+        "e-mobilitaet",
+        "bundesnetzagentur",
+        "arcgis",
+        "germany",
+        "bund.dev"
+      ]
+    },
+    {
+      "name": "lebensmittelwarnung",
+      "source": {
+        "source": "github",
+        "repo": "maschinenlesbar-org/lebensmittelwarnung-cli",
+        "ref": "v0.0.3"
+      },
+      "description": "Check Germany's official product-recall portal: current warnings (Rückrufe) by product, federal state, product type and recall reason — via the lebensmittel CLI over the official RSS feeds.",
+      "author": {
+        "name": "Sebastian Schürmann",
+        "email": "sebs@2xs.org"
+      },
+      "license": "AGPL-3.0-or-later",
+      "repository": "https://github.com/maschinenlesbar-org/lebensmittelwarnung-cli",
+      "homepage": "https://github.com/maschinenlesbar-org/lebensmittelwarnung-cli#readme",
+      "category": "government",
+      "keywords": [
+        "lebensmittelwarnung",
+        "rueckruf",
+        "recall",
+        "lebensmittel",
+        "verbraucherschutz",
+        "bvl",
+        "germany",
+        "rss"
+      ]
+    },
+    {
+      "name": "lobbyregister",
+      "source": {
+        "source": "github",
+        "repo": "maschinenlesbar-org/lobbyregister-cli",
+        "ref": "v0.0.7"
+      },
+      "description": "Profile who lobbies the Bundestag on a topic, rank registered lobbyists by declared spend or by legislative-engagement volume, track new registrations and deregistrations over time, and surface the revolving door of former MdBs and government officials — all over the open, key-free Lobbyregister search API via the lobbyregister-cli.",
+      "author": {
+        "name": "Sebastian Schürmann",
+        "email": "sebs@2xs.org"
+      },
+      "license": "AGPL-3.0-or-later",
+      "repository": "https://github.com/maschinenlesbar-org/lobbyregister-cli",
+      "homepage": "https://github.com/maschinenlesbar-org/lobbyregister-cli#readme",
+      "category": "transparency",
+      "keywords": [
+        "lobbyregister",
+        "bundestag",
+        "lobbying",
+        "transparency",
+        "revolving-door",
+        "interessenvertretung",
+        "open-data",
+        "germany",
+        "bund.dev"
+      ]
+    },
+    {
+      "name": "luftqualitaet",
+      "source": {
+        "source": "github",
+        "repo": "maschinenlesbar-org/luftqualitaet-cli",
+        "ref": "v0.0.6"
+      },
+      "description": "Find the right air-quality monitoring station for a place, brief the current air-quality index for a station, and rank stations by annual pollutant levels or limit exceedances — all over the open, key-free Umweltbundesamt Air Data API via the luftqualitaet-cli.",
+      "author": {
+        "name": "Sebastian Schürmann",
+        "email": "sebs@2xs.org"
+      },
+      "license": "AGPL-3.0-or-later",
+      "repository": "https://github.com/maschinenlesbar-org/luftqualitaet-cli",
+      "homepage": "https://github.com/maschinenlesbar-org/luftqualitaet-cli#readme",
+      "category": "environment",
+      "keywords": [
+        "luftqualitaet",
+        "air-quality",
+        "umweltbundesamt",
+        "uba",
+        "no2",
+        "pm10",
+        "ozone",
+        "emissions",
+        "environment",
+        "germany",
+        "bund.dev"
+      ]
+    },
+    {
+      "name": "mastr",
+      "source": {
+        "source": "github",
+        "repo": "maschinenlesbar-org/marktstammdatenregister-cli",
+        "ref": "v0.0.4"
+      },
+      "description": "Search and count German electricity & gas units — solar, wind, storage, CHP — in the Bundesnetzagentur's Marktstammdatenregister (MaStR), with the filter-syntax and record-reading help, via the marktstammdatenregister-cli.",
+      "author": {
+        "name": "Sebastian Schürmann",
+        "email": "sebs@2xs.org"
+      },
+      "license": "AGPL-3.0-or-later",
+      "repository": "https://github.com/maschinenlesbar-org/marktstammdatenregister-cli",
+      "homepage": "https://github.com/maschinenlesbar-org/marktstammdatenregister-cli#readme",
+      "category": "government",
+      "keywords": [
+        "marktstammdatenregister",
+        "mastr",
+        "bundesnetzagentur",
+        "energie",
+        "strom",
+        "gas",
+        "photovoltaik",
+        "windkraft",
+        "germany",
+        "bund.dev"
+      ]
+    },
+    {
+      "name": "mudab",
+      "source": {
+        "source": "github",
+        "repo": "maschinenlesbar-org/mudab-cli",
+        "ref": "v0.0.4"
+      },
+      "description": "Explore German marine-monitoring data — stations, measured parameters, measurements and HELCOM PLC river loads for the North and Baltic Sea — over the MUDAB (Meeresumweltdatenbank) API via the mudab-cli.",
+      "author": {
+        "name": "Sebastian Schürmann",
+        "email": "sebs@2xs.org"
+      },
+      "license": "AGPL-3.0-or-later",
+      "repository": "https://github.com/maschinenlesbar-org/mudab-cli",
+      "homepage": "https://github.com/maschinenlesbar-org/mudab-cli#readme",
+      "category": "government",
+      "keywords": [
+        "mudab",
+        "meeresumweltdatenbank",
+        "marine",
+        "monitoring",
+        "umweltbundesamt",
+        "bafg",
+        "nordsee",
+        "ostsee",
+        "germany",
+        "bund.dev"
+      ]
+    },
+    {
+      "name": "nina",
+      "source": {
+        "source": "github",
+        "repo": "maschinenlesbar-org/nina-warnungen-cli",
+        "ref": "v0.0.5"
+      },
+      "description": "Brief Germany's live civil-protection warnings across all NINA sources, watch a specific region by its ARS/AGS key, and export a warning's affected area as GeoJSON — all over the open, key-free NINA API via the nina-warnungen-cli.",
+      "author": {
+        "name": "Sebastian Schürmann",
+        "email": "sebs@2xs.org"
+      },
+      "license": "AGPL-3.0-or-later",
+      "repository": "https://github.com/maschinenlesbar-org/nina-warnungen-cli",
+      "homepage": "https://github.com/maschinenlesbar-org/nina-warnungen-cli#readme",
+      "category": "civic",
+      "keywords": [
+        "nina",
+        "warnung",
+        "bbk",
+        "mowas",
+        "katwarn",
+        "dwd",
+        "civil-protection",
+        "alerts",
+        "geojson",
+        "germany",
+        "bund.dev"
+      ]
+    },
+    {
+      "name": "pegel",
+      "source": {
+        "source": "github",
+        "repo": "maschinenlesbar-org/pegel-online-cli",
+        "ref": "v0.0.5"
+      },
+      "description": "Check live water levels and flood/low-water state at any German federal-waterway gauge, get a whole-river overview, analyse level trends, and export gauges as GeoJSON — all over the open, key-free PEGELONLINE API via the pegel-online-cli.",
+      "author": {
+        "name": "Sebastian Schürmann",
+        "email": "sebs@2xs.org"
+      },
+      "license": "AGPL-3.0-or-later",
+      "repository": "https://github.com/maschinenlesbar-org/pegel-online-cli",
+      "homepage": "https://github.com/maschinenlesbar-org/pegel-online-cli#readme",
+      "category": "data",
+      "keywords": [
+        "pegelonline",
+        "wsv",
+        "wasserstand",
+        "water-level",
+        "hydrology",
+        "flood",
+        "rivers",
+        "geojson",
+        "germany",
+        "bund.dev"
+      ]
+    },
+    {
+      "name": "regionalatlas",
+      "source": {
+        "source": "github",
+        "repo": "maschinenlesbar-org/regionalatlas-cli",
+        "ref": "v0.0.4"
+      },
+      "description": "Browse, map and compare regional-statistics indicators for Germany — by Bundesland, Regierungsbezirk, Kreis or Gemeinde — from the Regionalatlas Deutschland of the Statistische Ämter des Bundes und der Länder, via the regionalatlas-cli.",
+      "author": {
+        "name": "Sebastian Schürmann",
+        "email": "sebs@2xs.org"
+      },
+      "license": "AGPL-3.0-or-later",
+      "repository": "https://github.com/maschinenlesbar-org/regionalatlas-cli",
+      "homepage": "https://github.com/maschinenlesbar-org/regionalatlas-cli#readme",
+      "category": "government",
+      "keywords": [
+        "regionalatlas",
+        "regionaldatenbank",
+        "regionalstatistik",
+        "statistische-aemter",
+        "destatis",
+        "indikatoren",
+        "arcgis",
+        "germany",
+        "bund.dev"
+      ]
+    },
+    {
+      "name": "regionalstatistik",
+      "source": {
+        "source": "github",
+        "repo": "maschinenlesbar-org/regionalstatistik-cli",
+        "ref": "v0.0.4"
+      },
+      "description": "Find the right regional-statistics object, fetch and decode its data by Kreis or Gemeinde, and export tables to CSV/Excel — over the Regionaldatenbank Deutschland GENESIS API via the regionalstatistik-cli.",
+      "author": {
+        "name": "Sebastian Schürmann",
+        "email": "sebs@2xs.org"
+      },
+      "license": "AGPL-3.0-or-later",
+      "repository": "https://github.com/maschinenlesbar-org/regionalstatistik-cli",
+      "homepage": "https://github.com/maschinenlesbar-org/regionalstatistik-cli#readme",
+      "category": "government",
+      "keywords": [
+        "regionalstatistik",
+        "regionaldatenbank",
+        "genesis",
+        "genesis-online",
+        "statistik",
+        "official-statistics",
+        "regional-statistics",
+        "kreise",
+        "gemeinden",
+        "germany",
+        "opendata",
+        "bund.dev"
+      ]
+    },
+    {
+      "name": "reisewarnungen",
+      "source": {
+        "source": "github",
+        "repo": "maschinenlesbar-org/reisewarnungen-cli",
+        "ref": "v0.0.7"
+      },
+      "description": "Brief the German Foreign Office's travel and safety advice for a trip, rank every country currently under a warning, and diff warnings over time — all over the open, key-free Auswärtiges Amt travel-warning API via the reisewarnungen-cli.",
+      "author": {
+        "name": "Sebastian Schürmann",
+        "email": "sebs@2xs.org"
+      },
+      "license": "AGPL-3.0-or-later",
+      "repository": "https://github.com/maschinenlesbar-org/reisewarnungen-cli",
+      "homepage": "https://github.com/maschinenlesbar-org/reisewarnungen-cli#readme",
+      "category": "travel",
+      "keywords": [
+        "reisewarnungen",
+        "travel-warning",
+        "reisewarnung",
+        "auswaertiges-amt",
+        "travel-safety",
+        "advisory",
+        "germany",
+        "opendata",
+        "bund.dev"
+      ]
+    },
+    {
+      "name": "smard",
+      "source": {
+        "source": "github",
+        "repo": "maschinenlesbar-org/smard-cli",
+        "ref": "v0.0.8"
+      },
+      "description": "Build Germany's generation mix and renewable share, summarise day-ahead wholesale prices across bidding zones, and export gap-clean electricity time series — all over the open, key-free SMARD chart-data API via the smard-cli.",
+      "author": {
+        "name": "Sebastian Schürmann",
+        "email": "sebs@2xs.org"
+      },
+      "license": "AGPL-3.0-or-later",
+      "repository": "https://github.com/maschinenlesbar-org/smard-cli",
+      "homepage": "https://github.com/maschinenlesbar-org/smard-cli#readme",
+      "category": "energy",
+      "keywords": [
+        "smard",
+        "strommarkt",
+        "bundesnetzagentur",
+        "electricity",
+        "energy",
+        "generation",
+        "consumption",
+        "wholesale-price",
+        "renewables",
+        "germany",
+        "bund.dev"
+      ]
+    },
+    {
+      "name": "strahlenschutz",
+      "source": {
+        "source": "github",
+        "repo": "maschinenlesbar-org/strahlenschutz-cli",
+        "ref": "v0.0.6"
+      },
+      "description": "Rank the live ambient gamma dose rate (ODL) across Germany's ~1700 BfS stations, read a single station's time-series trend, and export the network as GeoJSON — all over the open, key-free ODL-Info WFS via the strahlenschutz-cli.",
+      "author": {
+        "name": "Sebastian Schürmann",
+        "email": "sebs@2xs.org"
+      },
+      "license": "AGPL-3.0-or-later",
+      "repository": "https://github.com/maschinenlesbar-org/strahlenschutz-cli",
+      "homepage": "https://github.com/maschinenlesbar-org/strahlenschutz-cli#readme",
+      "category": "environment",
+      "keywords": [
+        "strahlenschutz",
+        "bfs",
+        "odl",
+        "radiation",
+        "dose-rate",
+        "geojson",
+        "environment",
+        "germany",
+        "bund.dev"
+      ]
+    },
+    {
+      "name": "tagesschau",
+      "source": {
+        "source": "github",
+        "repo": "maschinenlesbar-org/tagesschau-cli",
+        "ref": "v0.0.6"
+      },
+      "description": "Briefings of current German headlines, regional news by Bundesland, full-text topic tracking, and live stream links — all over the open, key-free Tagesschau API via the tagesschau-cli.",
+      "author": {
+        "name": "Sebastian Schürmann",
+        "email": "sebs@2xs.org"
+      },
+      "license": "AGPL-3.0-or-later",
+      "repository": "https://github.com/maschinenlesbar-org/tagesschau-cli",
+      "homepage": "https://github.com/maschinenlesbar-org/tagesschau-cli#readme",
+      "category": "news",
+      "keywords": [
+        "tagesschau",
+        "ard",
+        "news",
+        "nachrichten",
+        "regional",
+        "bundesland",
+        "search",
+        "livestream",
+        "germany",
+        "bund.dev"
+      ]
+    }
+  ]
+}
