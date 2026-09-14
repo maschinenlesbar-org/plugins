@@ -1,0 +1,104 @@
+# English interface strings. Every language file must have the same keys (the
+# build fails otherwise), except `categories` and `plugins`, which may be partial:
+# a missing entry falls back to the English text from the marketplace.
+# Placeholders like %name% are filled in by the templates.
+
+name: English
+
+site:
+  title: maschinenlesbar.org plugins
+  description: >-
+    Claude Code plugins for open German public-sector APIs — parliament, statistics,
+    weather, water levels, energy, warnings and more, each driving a maschinenlesbar.org CLI.
+
+nav:
+  label: Main
+  plugins: Plugins
+  install: Install
+  github: GitHub
+  language: Language
+  skip: Skip to content
+
+hero:
+  eyebrow: Claude Code plugin marketplace
+  title: Ask Claude about Germany's open public-sector data
+  intro: >-
+    %plugins% plugins with %skills% skills teach Claude to use the maschinenlesbar.org
+    command-line tools — for the Bundestag and Bundesrat, official statistics, weather and
+    water levels, energy, public warnings, jobs and more.
+
+install:
+  title: Install
+  step1_title: Add the marketplace
+  step1_text: "Once, inside Claude Code:"
+  step2_title: Install the CLI
+  step2_text: >-
+    Each plugin drives a CLI you install yourself. Skills check it's on your PATH and
+    never install anything.
+  step3_title: Install the plugin
+  step3_text: Then just ask — Claude picks the right skill.
+  note: >-
+    A few APIs need a free key or account; each plugin's page links to its requirements.
+    Installing a plugin copies its CLI repository and runs <code>npm ci --ignore-scripts</code>
+    there (about 35 MB) — the skills don't use those packages, they call the CLI you
+    installed. Pick up new releases with <code>/plugin marketplace update %name%</code>.
+
+catalogue:
+  title: Plugins
+  meta: "%skills% skills · <code>%bin%</code> CLI"
+
+filter:
+  placeholder: Filter by name, topic or API…
+  search_label: Filter plugins
+  category_label: Category
+  all: All
+  total_format: "%total% plugins"
+  count_format: "%visible% of %total% plugins"
+  empty: No plugin matches.
+
+copy:
+  label: Copy
+  copied: Copied
+  failed: Copying failed — select the text instead.
+
+teams:
+  title: For a team or project
+  text: >-
+    Commit this to a project's <code>.claude/settings.json</code> to register the
+    marketplace and enable plugins for everyone working in it:
+
+data:
+  title: The tool, not the data
+  text: >-
+    The data comes from the public bodies behind each API, under their own terms — public
+    domain, attribution licences or custom provider terms — documented in
+    <code>DATA_LICENSE.md</code> in each plugin's repository. The plugins and CLIs are
+    dual-licensed AGPL-3.0-or-later or commercial.
+
+plugin:
+  breadcrumb: Breadcrumb
+  install_cli: "Install the <code>%bin%</code> CLI:"
+  add_marketplace: "Add the marketplace (once):"
+  install_plugin: "Install the plugin:"
+  requirements: Requirements such as API keys or accounts are listed in <a href="%url%">SKILLS.md</a>.
+  skills_title: Skills
+  skills_note: ""
+  details_title: Details
+  repository: Repository
+  cli: CLI
+  command: command
+  version: Plugin version
+  from_tag: from tag
+  license: License
+  data_terms: Data terms
+  keywords: Keywords
+
+footer:
+  marketplace: >-
+    A <a href="https://code.claude.com/docs/en/plugin-marketplaces">Claude Code plugin
+    marketplace</a> by <a href="%org_url%">maschinenlesbar.org</a>
+  license: AGPL-3.0-or-later or commercial
+  tagline: The plugins provide the tool, not the data — each API's data has its own terms.
+
+categories: {}
+plugins: {}

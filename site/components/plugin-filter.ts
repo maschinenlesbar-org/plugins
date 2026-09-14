@@ -5,7 +5,14 @@
  * only appear once it has.
  *
  * Items are the descendants matching `[data-plugin]`. Each carries
- * `data-category` and `data-search` (the lower-cased text to match against).
+ * `data-category`, an optional display name in `data-category-label`, and
+ * `data-search` (the lower-cased text to match against).
+ *
+ * The texts are localisable through attributes read when the element connects:
+ * `placeholder`, `search-label` (the input's accessible name), `category-label`
+ * (the button group's accessible name), `all-label`, and the status lines
+ * `total-format` ("%total% plugins"), `count-format` ("%visible% of %total% plugins")
+ * and `empty-text`. Category buttons are sorted by label in the document language.
  *
  * @summary Search box and category filter for a list of plugins.
  *
@@ -19,10 +26,10 @@
  *
  * @demo
  * ```html
- * <plugin-filter>
+ * <plugin-filter all-label="Alle" count-format="%visible% von %total% Plugins">
  *   <ul>
- *     <li data-plugin data-category="weather" data-search="dwd weather warnings">dwd</li>
- *     <li data-plugin data-category="energy" data-search="smard electricity prices">smard</li>
+ *     <li data-plugin data-category="weather" data-category-label="Wetter" data-search="dwd weather warnings">dwd</li>
+ *     <li data-plugin data-category="energy" data-category-label="Energie" data-search="smard electricity prices">smard</li>
  *   </ul>
  * </plugin-filter>
  * ```
@@ -79,6 +86,10 @@ class PluginFilter extends HTMLElement {
         return Array.from(this.querySelectorAll<HTMLElement>('[data-plugin]'));
     }
 
+    private text(attribute: string, fallback: string) {
+        return this.getAttribute(attribute) || fallback;
+    }
+
     private apply() {
         if (!this.shadowRoot || !this.isConnected) return;
         const needle = this._query.trim().toLowerCase();
@@ -95,11 +106,14 @@ class PluginFilter extends HTMLElement {
         const input = this.shadowRoot.querySelector('input');
         if (input && input.value !== this._query) input.value = this._query;
         const count = this.shadowRoot.querySelector('[part="count"]');
-        const total = this.items.length;
+        const total = String(this.items.length);
         if (count) {
-            count.textContent = visible === total
-                ? `${total} plugins`
-                : visible === 0 ? 'No plugin matches.' : `${visible} of ${total} plugins`;
+            count.textContent = visible === this.items.length
+                ? this.text('total-format', '%total% plugins').replace('%total%', total)
+                : visible === 0
+                    ? this.text('empty-text', 'No plugin matches.')
+                    : this.text('count-format', '%visible% of %total% plugins')
+                        .replace('%visible%', String(visible)).replace('%total%', total);
         }
         this.dispatchEvent(new CustomEvent('filter-change', {
             detail: { query: this._query, category: this._category, visible },
@@ -108,10 +122,14 @@ class PluginFilter extends HTMLElement {
 
     private render() {
         if (!this.shadowRoot) return;
-        const categories = [...new Set(this.items.map(item => item.dataset.category ?? '').filter(Boolean))].sort();
-        const escape = (s: string) => s.replace(/[&<>"]/g, c => `&#${c.charCodeAt(0)};`);
-        const chip = (value: string, label: string) =>
-            `<button type="button" data-category="${escape(value)}" aria-pressed="false">${escape(label)}</button>`;
+        const labels = new Map<string, string>();
+        for (const item of this.items) {
+            const value = item.dataset.category;
+            if (value && !labels.has(value)) labels.set(value, item.dataset.categoryLabel || value);
+        }
+        const lang = this.closest('[lang]')?.getAttribute('lang') || undefined;
+        const categories = [...labels].sort(([, a], [, b]) => a.localeCompare(b, lang));
+
         this.shadowRoot.innerHTML = `
             <style>
                 :host { display: block; }
@@ -141,19 +159,31 @@ class PluginFilter extends HTMLElement {
                 [part="count"] { margin: 0.75rem 0 var(--plugin-filter-gap, 1rem); font-size: 0.9rem; opacity: 0.8; }
             </style>
             <div part="controls">
-                <input part="search" type="search" placeholder="Filter by name, topic or API…" aria-label="Filter plugins" autocomplete="off">
-                <div part="categories" role="group" aria-label="Category">
-                    ${chip('', 'All')}${categories.map(c => chip(c, c)).join('')}
-                </div>
+                <input part="search" type="search" autocomplete="off">
+                <div part="categories" role="group"></div>
             </div>
             <p part="count" role="status"></p>
             <slot></slot>
         `;
-        this.shadowRoot.querySelector('input')?.addEventListener('input', event => {
-            this.query = (event.target as HTMLInputElement).value;
-        });
-        for (const button of this.shadowRoot.querySelectorAll<HTMLButtonElement>('button[data-category]')) {
-            button.addEventListener('click', () => { this.category = button.dataset.category ?? ''; });
+
+        const input = this.shadowRoot.querySelector('input');
+        if (input) {
+            input.placeholder = this.text('placeholder', 'Filter by name, topic or API…');
+            input.setAttribute('aria-label', this.text('search-label', 'Filter plugins'));
+            input.addEventListener('input', () => { this.query = input.value; });
+        }
+        const group = this.shadowRoot.querySelector('[part="categories"]');
+        if (group) {
+            group.setAttribute('aria-label', this.text('category-label', 'Category'));
+            for (const [value, label] of [['', this.text('all-label', 'All')], ...categories]) {
+                const button = document.createElement('button');
+                button.type = 'button';
+                button.dataset.category = value;
+                button.setAttribute('aria-pressed', 'false');
+                button.textContent = label;
+                button.addEventListener('click', () => { this.category = value; });
+                group.append(button);
+            }
         }
     }
 }

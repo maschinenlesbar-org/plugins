@@ -1,0 +1,89 @@
+---
+layout: default
+---
+{%- assign t = site.data.i18n[page.lang] -%}
+{%- assign m = site.data.marketplace -%}
+{%- if page.lang == site.default_lang -%}
+  {%- assign prefix = '/' -%}
+{%- else -%}
+  {%- assign prefix = '/' | append: page.lang | append: '/' -%}
+{%- endif -%}
+{%- capture add_marketplace %}/plugin marketplace add {{ site.repository }}{% endcapture -%}
+<section class="hero flow">
+  <p class="eyebrow">{{ t.hero.eyebrow }}</p>
+  <h1>{{ t.hero.title }}</h1>
+  <p class="intro">{{ t.hero.intro | replace: "%plugins%", m.plugins.size | replace: "%skills%", m.skill_count }}</p>
+  {% include copy.html code=add_marketplace %}
+</section>
+
+<section id="install" class="flow">
+  <h2>{{ t.install.title }}</h2>
+  <ol role="list" class="steps auto-grid gap">
+    <li class="card flow">
+      <h3><span class="step">1</span> {{ t.install.step1_title }}</h3>
+      <p>{{ t.install.step1_text }}</p>
+      {% include copy.html code=add_marketplace %}
+    </li>
+    <li class="card flow">
+      <h3><span class="step">2</span> {{ t.install.step2_title }}</h3>
+      <p>{{ t.install.step2_text }}</p>
+      {% include copy.html code="npm i -g @maschinenlesbar.org/fim-portal-cli" %}
+    </li>
+    <li class="card flow">
+      <h3><span class="step">3</span> {{ t.install.step3_title }}</h3>
+      <p>{{ t.install.step3_text }}</p>
+      {%- capture install_example %}/plugin install fim-portal@{{ m.name }}{% endcapture %}
+      {% include copy.html code=install_example %}
+    </li>
+  </ol>
+  <p class="note">{{ t.install.note | replace: "%name%", m.name }}</p>
+</section>
+
+<section id="plugins" class="flow">
+  <h2>{{ t.catalogue.title }}</h2>
+  <plugin-filter
+    placeholder="{{ t.filter.placeholder | escape }}"
+    search-label="{{ t.filter.search_label | escape }}"
+    category-label="{{ t.filter.category_label | escape }}"
+    all-label="{{ t.filter.all | escape }}"
+    total-format="{{ t.filter.total_format | escape }}"
+    count-format="{{ t.filter.count_format | escape }}"
+    empty-text="{{ t.filter.empty | escape }}">
+    <ul role="list" class="catalogue auto-grid gap">
+      {%- for p in m.plugins %}
+      {%- assign l = p.i18n[page.lang] %}
+      <li data-plugin data-category="{{ p.category | escape }}" data-category-label="{{ l.category | escape }}" data-search="{{ l.search | escape }}">
+        <article class="card --hover">
+          <div class="card-head">
+            <h3><a class="stretched-link" href="{{ prefix | append: p.name | append: '/' | relative_url }}">{{ p.name }}</a></h3>
+            <span class="badge">{{ l.category }}</span>
+          </div>
+          <p{% if l.description_lang %} lang="{{ l.description_lang }}"{% endif %}>{{ l.description | escape }}</p>
+          <p class="meta">{{ t.catalogue.meta | replace: "%skills%", p.skills.size | replace: "%bin%", p.bin }}</p>
+        </article>
+      </li>
+      {%- endfor %}
+    </ul>
+  </plugin-filter>
+</section>
+
+<section id="teams" class="flow">
+  <h2>{{ t.teams.title }}</h2>
+  <p>{{ t.teams.text }}</p>
+  {%- capture settings %}{
+  "extraKnownMarketplaces": {
+    "{{ m.name }}": {
+      "source": { "source": "github", "repo": "{{ site.repository }}" }
+    }
+  },
+  "enabledPlugins": {
+    "fim-portal@{{ m.name }}": true
+  }
+}{% endcapture %}
+  {% include copy.html code=settings %}
+</section>
+
+<section id="data" class="flow">
+  <h2>{{ t.data.title }}</h2>
+  <p>{{ t.data.text }}</p>
+</section>

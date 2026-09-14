@@ -56,8 +56,9 @@ entry as pinned to an older tag, which is fine.
 1. In the CLI repo: `.claude-plugin/plugin.json` + `skills/<skill>/SKILL.md` at the repo
    root, **no** `marketplace.json`, and install instructions in `SKILLS.md` pointing here.
    Release a tag that contains them.
-2. Here: add an entry in alphabetical order of the repository name, and a row in the
-   README's plugin table.
+2. Here: add an entry in alphabetical order of the repository name, a row in the README's
+   plugin table, and a German description in `site/_data/i18n/de.yml` (plus the category
+   name, if it's a new category).
 3. Run the check.
 
 ## Checks
@@ -82,15 +83,19 @@ Code version in `validate.yml`, since the validator's rules change between relea
 
 ## Website
 
-`site/` is a [Jekyll](https://jekyllrb.com/) site, deployed by `pages.yml` to
-<https://maschinenlesbar-org.github.io/plugins/> on every push to `main` that touches
-`site/` or the marketplace.
+`site/` is a [Jekyll](https://jekyllrb.com/) site in English and German, deployed by
+`pages.yml` to <https://maschinenlesbar-org.github.io/plugins/> (English) and
+<https://maschinenlesbar-org.github.io/plugins/de/> (German) on every push to `main` that
+touches `site/` or the marketplace.
 
 ```
 site/_plugins/marketplace.rb   reads the marketplace, clones each plugin at its tag (cached in
-                               site/.cache/), exposes site.data.marketplace, makes /<plugin>/ pages
-site/_layouts/                 default.html (shell), plugin.html (one plugin)
-site/index.html                hero, install steps, filterable catalogue, team settings
+                               site/.cache/), exposes site.data.marketplace, makes a page per
+                               plugin per language: /<plugin>/ and /de/<plugin>/
+site/_data/i18n/{en,de}.yml    all interface text, German plugin descriptions and category names
+site/_layouts/                 default.html (shell, language switch, hreflang), home.html, plugin.html
+site/index.html, site/de/      the two home pages (front matter only)
+site/_includes/copy.html       a localised <copy-command>
 site/components/*.ts           banira web components: <copy-command>, <plugin-filter>
 site/assets/css/site.css       site styles on top of Fylgja
 site/scripts/vendor-css.mjs    copies the pinned Fylgja stylesheets into assets/vendor/
@@ -98,8 +103,17 @@ site/scripts/vendor-css.mjs    copies the pinned Fylgja stylesheets into assets/
 
 - **Content comes from the plugins.** Descriptions, categories and keywords come from the
   marketplace entries; the skill list, plugin version and CLI package from each repo at its
-  pinned tag. Nothing plugin-specific is written by hand, so updating the marketplace updates
-  the site.
+  pinned tag. Apart from the German translations, nothing plugin-specific is written by hand,
+  so updating the marketplace updates the site.
+- **Translations.** `_data/i18n/en.yml` and `de.yml` must have the same interface keys; the
+  build fails when they differ. The German plugin descriptions (`plugins:`) and category names
+  (`categories:`) may lag behind: a missing one falls back to the English text (marked
+  `lang="en"`) and the build logs a warning. **When you add a CLI or change a description in
+  `marketplace.json`, update `de.yml` too** — the build can't notice a stale translation.
+  Skill descriptions are shown in English in both languages: they are the text Claude matches
+  on, and translating them would drift from the SKILL.md files. Placeholders in the strings use
+  `%name%` (Liquid can't have `}` inside `{{ }}`). Another language means a new
+  `_data/i18n/<lang>.yml`, an entry in `languages:` in `_config.yml`, and a `site/<lang>/index.html`.
 - **banira** compiles the components to `assets/js/` (`npm run build:js`) and checks them
   (`npm test` runs `banira test` and `banira lint --strict`). Both components progressively
   enhance plain HTML: without JavaScript every plugin and command is still shown.

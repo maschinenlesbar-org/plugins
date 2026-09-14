@@ -6,6 +6,10 @@
  * over `::slotted`), so reserve room for the button there, e.g.
  * `copy-command pre { padding-inline-end: 5rem }`.
  *
+ * The texts are localisable: `label` (button, default "Copy"), plus
+ * `copied-label` (shown after copying, default "Copied") and `failed-label`
+ * (announced when the clipboard is unavailable), which are read at copy time.
+ *
  * @summary Copy button for a slotted command snippet.
  *
  * @slot - The snippet to copy, typically a `<pre><code>` block.
@@ -66,11 +70,12 @@ class CopyCommand extends HTMLElement {
         try {
             await navigator.clipboard.writeText(text);
         } catch {
-            if (status) status.textContent = 'Copying failed — select the text instead.';
+            if (status) status.textContent = this.getAttribute('failed-label') || 'Copying failed — select the text instead.';
             return;
         }
-        if (button) button.textContent = 'Copied';
-        if (status) status.textContent = 'Copied to clipboard.';
+        const copied = this.getAttribute('copied-label') || 'Copied';
+        if (button) button.textContent = copied;
+        if (status) status.textContent = copied;
         this.dispatchEvent(new CustomEvent('copied', { detail: { text }, bubbles: true, composed: true }));
         window.clearTimeout(this._resetTimer);
         this._resetTimer = window.setTimeout(() => {
@@ -102,10 +107,13 @@ class CopyCommand extends HTMLElement {
                 .sr { position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); }
             </style>
             <slot></slot>
-            <button part="button" type="button">${this._label}</button>
+            <button part="button" type="button"></button>
             <span class="sr" role="status"></span>
         `;
-        this.shadowRoot.querySelector('button')?.addEventListener('click', () => this.copy());
+        const button = this.shadowRoot.querySelector('button');
+        if (!button) return;
+        button.textContent = this._label;
+        button.addEventListener('click', () => this.copy());
     }
 }
 

@@ -1,0 +1,260 @@
+# Deutsche Oberflächentexte. Gleiche Schlüssel wie en.yml (sonst bricht der Build ab).
+# `categories` und `plugins` dürfen lückenhaft sein: Fehlendes fällt auf den englischen
+# Text aus dem Marketplace zurück, und der Build meldet es als Warnung.
+# Ändert sich eine englische Plugin-Beschreibung in marketplace.json, hier nachziehen.
+
+name: Deutsch
+
+site:
+  title: maschinenlesbar.org Plugins
+  description: >-
+    Claude-Code-Plugins für offene APIs aus Staat und Verwaltung in Deutschland – Parlament,
+    Statistik, Wetter, Pegelstände, Energie, Warnungen und mehr, jeweils mit einer CLI von
+    maschinenlesbar.org.
+
+nav:
+  label: Hauptnavigation
+  plugins: Plugins
+  install: Installation
+  github: GitHub
+  language: Sprache
+  skip: Zum Inhalt springen
+
+hero:
+  eyebrow: Plugin-Marketplace für Claude Code
+  title: Offene Daten aus Staat und Verwaltung – direkt in Claude
+  intro: >-
+    %plugins% Plugins mit %skills% Skills bringen Claude bei, die Kommandozeilen-Werkzeuge
+    von maschinenlesbar.org zu nutzen – für Bundestag und Bundesrat, amtliche Statistik,
+    Wetter und Pegelstände, Energie, Warnungen, Stellenangebote und mehr.
+
+install:
+  title: Installation
+  step1_title: Marketplace hinzufügen
+  step1_text: "Einmalig in Claude Code:"
+  step2_title: CLI installieren
+  step2_text: >-
+    Jedes Plugin steuert eine CLI, die Sie selbst installieren. Die Skills prüfen, ob sie
+    im PATH liegt, und installieren nie etwas.
+  step3_title: Plugin installieren
+  step3_text: Dann einfach fragen – Claude wählt den passenden Skill.
+  note: >-
+    Einige APIs benötigen einen kostenlosen Schlüssel oder ein Konto; die Seite des
+    jeweiligen Plugins verweist auf die Voraussetzungen. Beim Installieren kopiert Claude
+    Code das Repository der CLI und führt dort <code>npm ci --ignore-scripts</code> aus
+    (etwa 35 MB) – die Skills nutzen diese Pakete nicht, sondern die von Ihnen installierte
+    CLI. Neue Versionen holen Sie mit <code>/plugin marketplace update %name%</code>.
+
+catalogue:
+  title: Plugins
+  meta: "%skills% Skills · CLI <code>%bin%</code>"
+
+filter:
+  placeholder: Nach Name, Thema oder API filtern…
+  search_label: Plugins filtern
+  category_label: Kategorie
+  all: Alle
+  total_format: "%total% Plugins"
+  count_format: "%visible% von %total% Plugins"
+  empty: Kein Plugin gefunden.
+
+copy:
+  label: Kopieren
+  copied: Kopiert
+  failed: Kopieren fehlgeschlagen – bitte den Text markieren.
+
+teams:
+  title: Für ein Team oder Projekt
+  text: >-
+    Legen Sie dies in der <code>.claude/settings.json</code> eines Projekts ab, um den
+    Marketplace für alle Beteiligten zu registrieren und Plugins zu aktivieren:
+
+data:
+  title: Das Werkzeug, nicht die Daten
+  text: >-
+    Die Daten stammen von den öffentlichen Stellen hinter der jeweiligen API und unterliegen
+    deren Bedingungen – gemeinfrei, Lizenzen mit Namensnennung oder eigene
+    Nutzungsbedingungen –, dokumentiert in <code>DATA_LICENSE.md</code> im Repository des
+    jeweiligen Plugins. Plugins und CLIs stehen unter AGPL-3.0-or-later oder einer
+    kommerziellen Lizenz.
+
+plugin:
+  breadcrumb: Brotkrümelnavigation
+  install_cli: "CLI <code>%bin%</code> installieren:"
+  add_marketplace: "Marketplace hinzufügen (einmalig):"
+  install_plugin: "Plugin installieren:"
+  requirements: Voraussetzungen wie API-Schlüssel oder Konten stehen in <a href="%url%">SKILLS.md</a>.
+  skills_title: Skills
+  skills_note: >-
+    Die Beschreibungen der Skills sind englisch – Claude wählt anhand dieser Texte den
+    passenden Skill. Ihre Fragen können Sie trotzdem auf Deutsch stellen.
+  details_title: Details
+  repository: Repository
+  cli: CLI
+  command: Befehl
+  version: Plugin-Version
+  from_tag: aus Tag
+  license: Lizenz
+  data_terms: Datenbedingungen
+  keywords: Schlagwörter
+
+footer:
+  marketplace: >-
+    Ein <a href="https://code.claude.com/docs/de/plugin-marketplaces">Plugin-Marketplace
+    für Claude Code</a> von <a href="%org_url%">maschinenlesbar.org</a>
+  license: AGPL-3.0-or-later oder kommerziell
+  tagline: Die Plugins liefern das Werkzeug, nicht die Daten – für die Daten jeder API gelten eigene Bedingungen.
+
+categories:
+  civic: Gesellschaft
+  data: Daten
+  education: Bildung
+  energy: Energie
+  environment: Umwelt
+  finance: Finanzen
+  government: Staat
+  jobs: Arbeit
+  news: Nachrichten
+  traffic: Verkehr
+  transparency: Transparenz
+  travel: Reisen
+  weather: Wetter
+
+plugins:
+  abgeordnetenwatch: >-
+    Das namentliche Abstimmungsverhalten von Politikerinnen und Politikern abrufen, offengelegte
+    Nebeneinkünfte sichtbar machen und aufschlüsseln, wie ein Parlament über eine Vorlage
+    abgestimmt hat – über die offene abgeordnetenwatch.de-API ohne Schlüssel (CC0-Daten) mit
+    der abgeordnetenwatch-cli.
+  ausbildungssuche: >-
+    Ausbildungs- und Weiterbildungsangebote in der Nähe eines Ortes finden, ein einzelnes
+    Angebot anhand seiner ID zusammenfassen und den Ausbildungsmarkt über Regionen hinweg
+    auswerten – über die Ausbildungssuche-API der Bundesagentur für Arbeit mit der
+    ausbildungssuche-cli.
+  autobahn: >-
+    Vor der Fahrt Störungen auf Autobahnen zusammenfassen, Ladestopps für E-Autos entlang
+    einer Route planen und jeden Autobahn-Dienst als GeoJSON exportieren – über die offene
+    API der Autobahn-App ohne Schlüssel mit der autobahn-cli.
+  bundeshaushalt: >-
+    Den Bundeshaushalt nach Ministerium, ökonomischer Gruppe oder Funktion aufschlüsseln,
+    Soll- und Ist-Zahlen vergleichen und mehrjährige Ausgabenentwicklungen darstellen – über
+    das offene Portal bundeshaushalt.de ohne Schlüssel mit der bundeshaushalt-cli.
+  bundesrat: >-
+    Den Bundesrat verfolgen: Tagesordnung und Drucksachen der aktuellen Plenarsitzung, die
+    Mitglieder (nach Land oder Partei) und Ausschusstermine – mit der bundesrat-cli. Zeigt
+    nur offen lizenzierte Daten.
+  bundeswahl: >-
+    Das amtliche Ergebnis der Bundestagswahl 2025 abfragen – Erst- und Zweitstimmen nach
+    Bund, Land oder Wahlkreis, gefiltert nach Partei – dazu die Parteien, die 299 Wahlkreise
+    und Strukturdaten, mit der bundeswahlleiterin-cli. Offene Daten (Datenlizenz Deutschland).
+  destatis-genesis: >-
+    Das passende Objekt der amtlichen Statistik finden, seine Daten abrufen und aufbereiten
+    und Tabellen als CSV/Excel exportieren – über die GENESIS-Online-API von DESTATIS mit der
+    destatis-genesis-cli.
+  ddb: >-
+    Das digitalisierte Kulturerbe Deutschlands durchsuchen, Facettenverteilungen erkunden und
+    alle Details zu einem Objekt abrufen – über die öffentliche v2-API der Deutschen Digitalen
+    Bibliothek mit der deutsche-digitale-bibliothek-cli. Kein API-Schlüssel nötig.
+  dip-bundestag: >-
+    Ein Gesetzgebungsverfahren im Bundestag von Anfang bis Ende verfolgen, Abgeordnete
+    porträtieren und Drucksachen und Plenarprotokolle samt Volltext auswerten – über die
+    DIP-API des Bundestages mit der dip-bundestag-cli.
+  dwd: >-
+    Aktuelle Wetterwarnungen für Deutschland zusammenfassen, eine DWD-Stationsvorhersage in
+    echte Einheiten umrechnen, Warngebiete als GeoJSON exportieren und amtliche Warnungen mit
+    Meldungen aus der Bevölkerung abgleichen – über die offene API der DWD-Warnwetter-App ohne
+    Schlüssel mit der dwd-cli.
+  entgeltatlas: >-
+    Nachschlagen, was ein Beruf in Deutschland einbringt, Entgelte nach Geschlecht, Region und
+    Anforderungsniveau vergleichen und KldB- und Dimensionscodes ermitteln – über die
+    Entgeltatlas-API der Bundesagentur für Arbeit mit der entgeltatlas-cli.
+  fim-portal: >-
+    Leistungsdossiers zusammenstellen, Datenschemata als Formular-Blaupausen aufbereiten, die
+    Qualität von Schemata prüfen und wiederverwendbare Datenfelder finden – über die offene
+    FIM-Portal-API ohne Schlüssel mit der fim-portal-cli.
+  fit-connect: >-
+    Ermitteln, welche Behörde an einem Ort für eine Verwaltungsleistung zuständig ist,
+    Gebietsschlüssel (ags/ars/areaId) nachschlagen und verständliche Leistungsbeschreibungen
+    für Bürgerinnen und Bürger erstellen – über die offene FIT-Connect-Routing-API ohne
+    Schlüssel mit der fit-connect-cli.
+  fragdenstaat: >-
+    Informationsfreiheitsanfragen finden und auswerten, die zuständige Behörde nachschlagen,
+    die Rechtslage zur Informationsfreiheit in Deutschland erkunden und freigegebene Dokumente
+    heraussuchen und exportieren – über die öffentliche FragDenStaat.de-API ohne Schlüssel
+    mit der fragdenstaat-cli.
+  govdata: >-
+    Offene Datensätze der deutschen Verwaltung finden und nach Relevanz ordnen,
+    Katalogstatistiken mit CKAN-Facetten erstellen und herunterladbare Ressourcen in einem
+    Manifest sammeln – über die offene GovData-CKAN-API ohne Schlüssel mit der govdata-cli.
+  hochwasser: >-
+    Amtliche Hochwasserwarnungen und die Hochwasser-Einstufung an rund 1200 Pegeln prüfen,
+    einen Lageüberblick je Bundesland abrufen und Warngebiete oder Pegel als GeoJSON
+    exportieren – über die offene LHP-PublicAPI ohne Schlüssel mit der hochwasserzentralen-cli.
+  jobsuche: >-
+    Den Arbeitsmarkt für einen Beruf oder eine Region überblicken, eine nach Relevanz
+    geordnete Stellensuche mit vollständigen Details durchführen und die offenen Stellen eines
+    bestimmten Arbeitgebers beobachten – über die offene Jobsuche-API der Bundesagentur für
+    Arbeit mit der jobsuche-cli.
+  ladesaeulen: >-
+    Öffentliche Ladesäulen für E-Autos in Deutschland finden, zählen und kartieren – nach Ort,
+    Betreiber, Steckertyp, Leistung oder im Umkreis eines Punktes – aus dem Ladesäulenregister
+    der Bundesnetzagentur mit der ladesaeulenregister-cli.
+  lebensmittelwarnung: >-
+    Das amtliche Portal für Produktrückrufe in Deutschland abfragen: aktuelle Warnungen
+    (Rückrufe) nach Produkt, Bundesland, Produktart und Rückrufgrund – mit der lebensmittel-CLI
+    über die offiziellen RSS-Feeds.
+  lobbyregister: >-
+    Herausfinden, wer beim Bundestag zu einem Thema Lobbyarbeit betreibt, registrierte
+    Interessenvertretungen nach angegebenen Ausgaben oder nach dem Umfang ihrer
+    Gesetzgebungsaktivitäten ordnen, Neu- und Abmeldungen im Zeitverlauf verfolgen und
+    Seitenwechsel ehemaliger Abgeordneter und Regierungsangehöriger sichtbar machen – über die
+    offene Such-API des Lobbyregisters ohne Schlüssel mit der lobbyregister-cli.
+  luftqualitaet: >-
+    Die passende Luftmessstation für einen Ort finden, den aktuellen Luftqualitätsindex einer
+    Station zusammenfassen und Stationen nach Jahreswerten von Schadstoffen oder
+    Grenzwertüberschreitungen ordnen – über die offene Air-Data-API des Umweltbundesamts ohne
+    Schlüssel mit der luftqualitaet-cli.
+  mastr: >-
+    Strom- und Gaseinheiten in Deutschland suchen und zählen – Solar, Wind, Speicher, KWK – im
+    Marktstammdatenregister (MaStR) der Bundesnetzagentur, mit Hilfe zur Filtersyntax und zum
+    Lesen der Einträge, mit der marktstammdatenregister-cli.
+  mudab: >-
+    Daten des deutschen Meeresmonitorings erkunden – Stationen, Messparameter, Messwerte und
+    HELCOM-PLC-Frachten der Flüsse für Nord- und Ostsee – über die API der MUDAB
+    (Meeresumweltdatenbank) mit der mudab-cli.
+  nina: >-
+    Aktuelle Warnungen des Bevölkerungsschutzes aus allen NINA-Quellen zusammenfassen, eine
+    Region anhand ihres ARS/AGS beobachten und das betroffene Gebiet einer Warnung als GeoJSON
+    exportieren – über die offene NINA-API ohne Schlüssel mit der nina-warnungen-cli.
+  pegel: >-
+    Aktuelle Wasserstände und die Hoch- oder Niedrigwasserlage an jedem Pegel der
+    Bundeswasserstraßen prüfen, einen Überblick über einen ganzen Fluss abrufen,
+    Wasserstandstrends analysieren und Pegel als GeoJSON exportieren – über die offene
+    PEGELONLINE-API ohne Schlüssel mit der pegel-online-cli.
+  regionalatlas: >-
+    Regionalstatistische Indikatoren für Deutschland durchsuchen, kartieren und vergleichen –
+    nach Bundesland, Regierungsbezirk, Kreis oder Gemeinde – aus dem Regionalatlas Deutschland
+    der Statistischen Ämter des Bundes und der Länder, mit der regionalatlas-cli.
+  regionalstatistik: >-
+    Das passende Objekt der Regionalstatistik finden, seine Daten nach Kreis oder Gemeinde
+    abrufen und aufbereiten und Tabellen als CSV/Excel exportieren – über die GENESIS-API der
+    Regionaldatenbank Deutschland mit der regionalstatistik-cli.
+  reisewarnungen: >-
+    Die Reise- und Sicherheitshinweise des Auswärtigen Amts für eine Reise zusammenfassen, alle
+    Länder mit aktueller Reisewarnung auflisten und Änderungen der Warnungen im Zeitverlauf
+    vergleichen – über die offene Reisewarnungs-API des Auswärtigen Amts ohne Schlüssel mit
+    der reisewarnungen-cli.
+  smard: >-
+    Den Strommix und den Anteil erneuerbarer Energien in Deutschland ermitteln,
+    Day-Ahead-Großhandelspreise über Gebotszonen hinweg zusammenfassen und lückenbereinigte
+    Zeitreihen zum Strommarkt exportieren – über die offene SMARD-Chart-Data-API ohne Schlüssel
+    mit der smard-cli.
+  strahlenschutz: >-
+    Die aktuelle Umgebungs-Gammadosisleistung (ODL) an rund 1700 Messstellen des BfS in
+    Deutschland vergleichen, den zeitlichen Verlauf an einer Messstelle ablesen und das
+    Messnetz als GeoJSON exportieren – über den offenen ODL-Info-WFS ohne Schlüssel mit der
+    strahlenschutz-cli.
+  tagesschau: >-
+    Überblick über die aktuellen Schlagzeilen aus Deutschland, Regionalnachrichten nach
+    Bundesland, Themen-Tracking im Volltext und Links zu Livestreams – über die offene
+    Tagesschau-API ohne Schlüssel mit der tagesschau-cli.

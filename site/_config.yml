@@ -12,6 +12,17 @@ marketplace:
   manifest: ../.claude-plugin/marketplace.json
   cache: .cache/repos
 
+# Every language gets the full site; strings live in _data/i18n/<lang>.yml.
+# The default language is served at the root, the others under /<lang>/.
+languages: [en, de]
+default_lang: en
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      lang: en
+
 markdown: kramdown
 permalink: pretty
 
