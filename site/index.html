@@ -1,0 +1,89 @@
+---
+layout: default
+---
+{%- assign m = site.data.marketplace -%}
+<section class="hero flow">
+  <p class="eyebrow">Claude Code plugin marketplace</p>
+  <h1>Ask Claude about Germany's open public-sector data</h1>
+  <p class="intro">
+    {{ m.plugins.size }} plugins with {{ m.skill_count }} skills teach Claude to use the
+    maschinenlesbar.org command-line tools — for the Bundestag and Bundesrat, official
+    statistics, weather and water levels, energy, public warnings, jobs and more.
+  </p>
+  <copy-command><pre><code>/plugin marketplace add {{ site.repository }}</code></pre></copy-command>
+</section>
+
+<section id="install" class="flow">
+  <h2>Install</h2>
+  <ol role="list" class="steps auto-grid gap">
+    <li class="card flow">
+      <h3><span class="step">1</span> Add the marketplace</h3>
+      <p>Once, inside Claude Code:</p>
+      <copy-command><pre><code>/plugin marketplace add {{ site.repository }}</code></pre></copy-command>
+    </li>
+    <li class="card flow">
+      <h3><span class="step">2</span> Install the CLI</h3>
+      <p>Each plugin drives a CLI you install yourself. Skills check it's on your PATH and never install anything.</p>
+      <copy-command><pre><code>npm i -g @maschinenlesbar.org/fim-portal-cli</code></pre></copy-command>
+    </li>
+    <li class="card flow">
+      <h3><span class="step">3</span> Install the plugin</h3>
+      <p>Then just ask — Claude picks the right skill.</p>
+      <copy-command><pre><code>/plugin install fim-portal@{{ m.name }}</code></pre></copy-command>
+    </li>
+  </ol>
+  <p class="note">
+    A few APIs need a free key or account; each plugin's page links to its requirements.
+    Installing a plugin copies its CLI repository and runs <code>npm ci --ignore-scripts</code>
+    there (about 35 MB) — the skills don't use those packages, they call the CLI you installed.
+    Pick up new releases with <code>/plugin marketplace update {{ m.name }}</code>.
+  </p>
+</section>
+
+<section id="plugins" class="flow">
+  <h2>Plugins</h2>
+  <plugin-filter>
+    <ul role="list" class="catalogue auto-grid gap">
+      {%- for p in m.plugins %}
+      <li data-plugin data-category="{{ p.category | escape }}" data-search="{{ p.search | escape }}">
+        <article class="card --hover">
+          <div class="card-head">
+            <h3><a class="stretched-link" href="{{ p.name | append: '/' | relative_url }}">{{ p.name }}</a></h3>
+            <span class="badge">{{ p.category }}</span>
+          </div>
+          <p>{{ p.description | escape }}</p>
+          <p class="meta">{{ p.skills.size }} skills · <code>{{ p.bin }}</code> CLI</p>
+        </article>
+      </li>
+      {%- endfor %}
+    </ul>
+  </plugin-filter>
+</section>
+
+<section id="teams" class="flow">
+  <h2>For a team or project</h2>
+  <p>
+    Commit this to a project's <code>.claude/settings.json</code> to register the marketplace
+    and enable plugins for everyone working in it:
+  </p>
+  <copy-command><pre><code>{
+  "extraKnownMarketplaces": {
+    "{{ m.name }}": {
+      "source": { "source": "github", "repo": "{{ site.repository }}" }
+    }
+  },
+  "enabledPlugins": {
+    "fim-portal@{{ m.name }}": true
+  }
+}</code></pre></copy-command>
+</section>
+
+<section id="data" class="flow">
+  <h2>The tool, not the data</h2>
+  <p>
+    The data comes from the public bodies behind each API, under their own terms — public
+    domain, attribution licences or custom provider terms — documented in
+    <code>DATA_LICENSE.md</code> in each plugin's repository. The plugins and CLIs are
+    dual-licensed AGPL-3.0-or-later or commercial.
+  </p>
+</section>

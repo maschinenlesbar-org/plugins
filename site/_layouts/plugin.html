@@ -1,0 +1,67 @@
+---
+layout: default
+---
+{%- assign p = page.plugin -%}
+{%- assign m = site.data.marketplace -%}
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="{{ '/#plugins' | relative_url }}">Plugins</a> <span aria-hidden="true">/</span>
+  <span aria-current="page">{{ p.name }}</span>
+</nav>
+
+<article class="plugin flow">
+  <header class="flow">
+    <h1>{{ p.name }} <span class="badge">{{ p.category }}</span></h1>
+    <p class="intro">{{ p.description | escape }}</p>
+  </header>
+
+  <section class="flow">
+    <h2>Install</h2>
+    <ol class="install flow">
+      <li class="flow">
+        <p>Install the <code>{{ p.bin }}</code> CLI:</p>
+        <copy-command><pre><code>npm i -g {{ p.package }}</code></pre></copy-command>
+      </li>
+      <li class="flow">
+        <p>Add the marketplace (once):</p>
+        <copy-command><pre><code>/plugin marketplace add {{ site.repository }}</code></pre></copy-command>
+      </li>
+      <li class="flow">
+        <p>Install the plugin:</p>
+        <copy-command><pre><code>/plugin install {{ p.name }}@{{ m.name }}</code></pre></copy-command>
+      </li>
+    </ol>
+    <p class="note">Requirements such as API keys or accounts are listed in <a href="{{ p.skills_url }}">SKILLS.md</a>.</p>
+  </section>
+
+  <section class="flow">
+    <h2>Skills</h2>
+    <ul role="list" class="skills flow">
+      {%- for s in p.skills %}
+      <li class="card flow">
+        <h3><code>/{{ p.name }}:{{ s.name }}</code></h3>
+        <p>{{ s.description | escape }}</p>
+      </li>
+      {%- endfor %}
+    </ul>
+  </section>
+
+  <section class="flow">
+    <h2>Details</h2>
+    <dl class="details">
+      <dt>Repository</dt>
+      <dd><a href="https://github.com/{{ p.repo }}">{{ p.repo }}</a></dd>
+      <dt>CLI</dt>
+      <dd><a href="https://www.npmjs.com/package/{{ p.package }}">{{ p.package }}</a> (command <code>{{ p.bin }}</code>)</dd>
+      <dt>Plugin version</dt>
+      <dd>{{ p.version }}, from tag <a href="https://github.com/{{ p.repo }}/tree/{{ p.ref }}">{{ p.ref }}</a></dd>
+      <dt>License</dt>
+      <dd>{{ p.license }}</dd>
+      {%- if p.data_license_url %}
+      <dt>Data terms</dt>
+      <dd><a href="{{ p.data_license_url }}">DATA_LICENSE.md</a></dd>
+      {%- endif %}
+      <dt>Keywords</dt>
+      <dd>{{ p.keywords | join: ", " }}</dd>
+    </dl>
+  </section>
+</article>

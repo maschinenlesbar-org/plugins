@@ -1,15 +1,17 @@
 # Developing
 
 This repo is only a catalogue. The skills live in the `*-cli` repositories; this repo lists
-them in [`.claude-plugin/marketplace.json`](.claude-plugin/marketplace.json) and checks
-that every entry still installs.
+them in [`.claude-plugin/marketplace.json`](.claude-plugin/marketplace.json), checks
+that every entry still installs, and builds the website for it.
 
 ## Layout
 
 ```
 .claude-plugin/marketplace.json   the marketplace: name "maschinenlesbar", one entry per CLI
 scripts/check-plugins.mjs         checks every entry against its repo at the pinned tag
+site/                             the website (Jekyll + banira components + Fylgja CSS)
 .github/workflows/validate.yml    runs the validator and the check on every push
+.github/workflows/pages.yml       builds site/ and deploys it to GitHub Pages
 ```
 
 Each entry points at a CLI repository and pins a release tag:
@@ -77,6 +79,45 @@ It shallow-clones each repository at its tag and fails when:
 
 It warns (without failing) when a newer tag than the pinned one exists. CI pins the Claude
 Code version in `validate.yml`, since the validator's rules change between releases.
+
+## Website
+
+`site/` is a [Jekyll](https://jekyllrb.com/) site, deployed by `pages.yml` to
+<https://maschinenlesbar-org.github.io/plugins/> on every push to `main` that touches
+`site/` or the marketplace.
+
+```
+site/_plugins/marketplace.rb   reads the marketplace, clones each plugin at its tag (cached in
+                               site/.cache/), exposes site.data.marketplace, makes /<plugin>/ pages
+site/_layouts/                 default.html (shell), plugin.html (one plugin)
+site/index.html                hero, install steps, filterable catalogue, team settings
+site/components/*.ts           banira web components: <copy-command>, <plugin-filter>
+site/assets/css/site.css       site styles on top of Fylgja
+site/scripts/vendor-css.mjs    copies the pinned Fylgja stylesheets into assets/vendor/
+```
+
+- **Content comes from the plugins.** Descriptions, categories and keywords come from the
+  marketplace entries; the skill list, plugin version and CLI package from each repo at its
+  pinned tag. Nothing plugin-specific is written by hand, so updating the marketplace updates
+  the site.
+- **banira** compiles the components to `assets/js/` (`npm run build:js`) and checks them
+  (`npm test` runs `banira test` and `banira lint --strict`). Both components progressively
+  enhance plain HTML: without JavaScript every plugin and command is still shown.
+- **Fylgja** (`@fylgja/tokens`, `base`, `theme`, `utilities`, `card`, `badge`) is installed
+  from npm at pinned versions and served from the site itself, not a CDN. The brand colour
+  is `--brand` in `site.css`; dark mode follows `prefers-color-scheme`.
+
+Build and preview locally (Node ≥ 22.12, Ruby 3.4, Bundler):
+
+```bash
+cd site
+npm ci && bundle install
+npm run serve        # http://127.0.0.1:4000/plugins/
+npm run build        # into site/_site/
+```
+
+The first build clones all 31 plugin repositories into `site/.cache/`; later builds reuse
+them until a `ref` changes.
 
 ## Why the plugins sit at the CLI repo root
 

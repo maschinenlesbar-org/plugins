@@ -1,0 +1,93 @@
+name: Pages
+
+# Builds the marketplace website from site/ with Jekyll and deploys it to GitHub
+# Pages (https://maschinenlesbar-org.github.io/plugins/). The banira components
+# are smoke-tested, linted and compiled, Fylgja's stylesheets are vendored from
+# npm, and one page per plugin is generated from .claude-plugin/marketplace.json
+# by cloning each plugin's repository at its pinned tag. Nothing is committed:
+# the site is assembled here and published as a Pages artifact.
+#
+# One-time repo setting: Settings -> Pages -> Build and deployment -> Source ->
+# "GitHub Actions".
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'site/**'
+      - '.claude-plugin/marketplace.json'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+# Least privilege at the workflow level: only read. The Pages/OIDC write scopes
+# are granted per-job, to the deploy job that actually needs them.
+permissions:
+  contents: read
+
+# Allow one in-flight Pages deployment at a time; don't cancel a running one.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: site
+    steps:
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+        with:
+          persist-credentials: false
+
+      - name: Use Node.js 24.x
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: 24.x
+          # No dependency caches in a job whose output gets deployed.
+          package-manager-cache: false
+
+      - name: Use Ruby 3.4
+        uses: ruby/setup-ruby@95ef2b042f9d7a56d8268cba8559e2842e2ad01b # v1.321.0
+        with:
+          ruby-version: '3.4'
+          working-directory: site
+          bundler-cache: false
+
+      - name: Install
+        run: |
+          npm ci
+          bundle install
+
+      - name: Test components (banira test + lint)
+        run: npm test
+
+      - name: Build assets (Fylgja CSS, banira components)
+        run: npm run build:assets
+
+      - name: Build site
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: site/_site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    # Scopes the Pages deploy needs, granted only to this job.
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0

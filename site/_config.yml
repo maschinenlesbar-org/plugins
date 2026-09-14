@@ -1,0 +1,27 @@
+title: maschinenlesbar.org plugins
+description: >-
+  Claude Code plugins for open German public-sector APIs — parliament, statistics,
+  weather, water levels, energy, warnings and more, each driving a maschinenlesbar.org CLI.
+url: https://maschinenlesbar-org.github.io
+baseurl: /plugins
+repository: maschinenlesbar-org/plugins
+org_url: https://maschinenlesbar-org.github.io/
+
+# Read by _plugins/marketplace.rb.
+marketplace:
+  manifest: ../.claude-plugin/marketplace.json
+  cache: .cache/repos
+
+markdown: kramdown
+permalink: pretty
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - package-lock.json
+  - node_modules
+  - components
+  - scripts
+  - vendor
+  - README.md

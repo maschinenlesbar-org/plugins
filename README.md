@@ -9,6 +9,9 @@ Each plugin lives in its CLI's own repository, next to the code it drives, and i
 here to a release tag of that repository. The skills teach Claude which CLI commands to run
 and how to read their JSON; they don't call the APIs themselves.
 
+**Website:** <https://maschinenlesbar-org.github.io/plugins/>, a searchable catalogue with a
+page per plugin listing its skills and install commands.
+
 ## Install
 
 Inside Claude Code, add the marketplace once, then install the plugins you want:
