@@ -1,0 +1,9 @@
+{
+  "name": "maschinenlesbar-plugins-validate",
+  "private": true,
+  "description": "Lockfile-pinned Claude Code CLI that validate.yml runs the marketplace checks with",
+  "license": "AGPL-3.0-or-later",
+  "dependencies": {
+    "@anthropic-ai/claude-code": "2.1.236"
+  }
+}

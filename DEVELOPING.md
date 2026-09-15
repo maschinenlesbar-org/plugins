@@ -10,6 +10,7 @@ that every entry still installs, and builds the website for it.
 .claude-plugin/marketplace.json   the marketplace: name "maschinenlesbar", one entry per CLI
 scripts/check-plugins.mjs         checks every entry against its repo at the pinned tag
 site/                             the website (Jekyll + banira components + Fylgja CSS)
+tools/validate/                   the lockfile-pinned Claude Code CLI that validate.yml runs
 .github/workflows/validate.yml    runs the validator and the check on every push
 .github/workflows/pages.yml       builds site/ and deploys it to GitHub Pages
 ```
@@ -79,7 +80,14 @@ It shallow-clones each repository at its tag and fails when:
   content changed, but its version didn't.
 
 It warns (without failing) when a newer tag than the pinned one exists. CI pins the Claude
-Code version in `validate.yml`, since the validator's rules change between releases.
+Code version, since the validator's rules change between releases: `validate.yml` installs it
+with `npm ci --prefix tools/validate` from that folder's lockfile. To run the checks with the
+same version locally, do that once and set
+`CLAUDE_BIN=tools/validate/node_modules/.bin/claude`. To move to a newer release:
+
+```bash
+npm install --prefix tools/validate --package-lock-only --save-exact @anthropic-ai/claude-code@X.Y.Z
+```
 
 ## Website
 

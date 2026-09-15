@@ -9,13 +9,21 @@ on:
 permissions:
   contents: read
 
+# One run per branch or PR: a newer push supersedes the in-flight run.
+concurrency:
+  group: validate-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   validate:
+    name: Validate marketplace and plugins
     runs-on: ubuntu-latest
 
     env:
       DISABLE_AUTOUPDATER: '1'
       CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC: '1'
+      # Installed from tools/validate/ below; check-plugins.mjs reads it too.
+      CLAUDE_BIN: ${{ github.workspace }}/tools/validate/node_modules/.bin/claude
 
     steps:
       - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
@@ -29,12 +37,14 @@ jobs:
         with:
           node-version: 24.x
 
-      # Pinned: the validator's rules change between Claude Code releases.
+      # Pinned: the validator's rules change between Claude Code releases. The
+      # lockfile in tools/validate/ pins the package and its platform binaries
+      # with integrity hashes, instead of an ad-hoc global install.
       - name: Install Claude Code
-        run: npm install -g @anthropic-ai/claude-code@2.1.236
+        run: npm ci --prefix tools/validate
 
       - name: Validate marketplace manifest
-        run: claude plugin validate --strict .
+        run: '"$CLAUDE_BIN" plugin validate --strict .'
 
       - name: Check plugins at their pinned tags
         run: node scripts/check-plugins.mjs
