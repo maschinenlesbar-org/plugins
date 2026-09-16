@@ -42,7 +42,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/ausbildungssuche-cli",
-        "ref": "v0.0.5"
+        "ref": "v0.0.6"
       },
       "description": "Find apprenticeships & training near a place, brief a single offer from its id, and profile the training market across regions — over the Bundesagentur für Arbeit Ausbildungssuche API via the ausbildungssuche-cli.",
       "author": {
@@ -154,7 +154,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/bundeswahlleiterin-cli",
-        "ref": "v0.0.5"
+        "ref": "v0.0.6"
       },
       "description": "Query the official Bundestagswahl 2025 result — first/second votes by Bund, Land or Wahlkreis, filtered by party — plus the parties, the 299 constituencies and structural data, via the bundeswahlleiterin-cli. Open data (Datenlizenz Deutschland).",
       "author": {
@@ -236,7 +236,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/dip-bundestag-cli",
-        "ref": "v0.0.7"
+        "ref": "v0.0.8"
       },
       "description": "Track a Bundestag legislative procedure end to end, profile a member, and digest Drucksachen / Plenarprotokolle with full text — all over the Bundestag DIP API via the dip-bundestag-cli.",
       "author": {
@@ -292,7 +292,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/entgeltatlas-cli",
-        "ref": "v0.0.4"
+        "ref": "v0.0.5"
       },
       "description": "Look up what a German occupation earns, compare salaries across gender/region/level, and resolve the KldB and dimension codes — over the Bundesagentur für Arbeit Entgeltatlas API via the entgeltatlas-cli.",
       "author": {
@@ -465,7 +465,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/jobsuche-cli",
-        "ref": "v0.0.5"
+        "ref": "v0.0.6"
       },
       "description": "Scan the German job market for a role/region, run a ranked job hunt with full-detail enrichment, and watch a specific employer's openings — all over the open Bundesagentur für Arbeit Jobsuche API via the jobsuche-cli.",
       "author": {
