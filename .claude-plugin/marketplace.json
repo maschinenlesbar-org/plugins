@@ -890,6 +890,33 @@
         "germany",
         "bund.dev"
       ]
+    },
+    {
+      "name": "oparl",
+      "source": {
+        "source": "github",
+        "repo": "maschinenlesbar-org/oparl-cli",
+        "ref": "v0.0.2"
+      },
+      "description": "Follow a German city or municipal council through its OParl council information system (Ratsinformationssystem) — find the endpoint, then its bodies, meetings, papers and committees — via the oparl-cli. Open data; licence varies per endpoint.",
+      "author": {
+        "name": "Sebastian Schürmann",
+        "email": "sebs@2xs.org"
+      },
+      "license": "AGPL-3.0-or-later",
+      "repository": "https://github.com/maschinenlesbar-org/oparl-cli",
+      "homepage": "https://github.com/maschinenlesbar-org/oparl-cli#readme",
+      "category": "government",
+      "keywords": [
+        "oparl",
+        "ratsinformationssystem",
+        "ratsinfo",
+        "kommunalpolitik",
+        "gemeinderat",
+        "stadtrat",
+        "germany",
+        "opendata"
+      ]
     }
   ]
 }
