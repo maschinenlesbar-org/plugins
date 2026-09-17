@@ -722,7 +722,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/regionalatlas-cli",
-        "ref": "v0.0.4"
+        "ref": "v0.1.0"
       },
       "description": "Browse, map and compare regional-statistics indicators for Germany — by Bundesland, Regierungsbezirk, Kreis or Gemeinde — from the Regionalatlas Deutschland of the Statistische Ämter des Bundes und der Länder, via the regionalatlas-cli.",
       "author": {
