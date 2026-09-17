@@ -14,7 +14,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/abgeordnetenwatch-cli",
-        "ref": "v0.0.7"
+        "ref": "v0.0.8"
       },
       "description": "Pull a politician's roll-call voting record, surface disclosed side income, and break down how a parliament voted on a bill — all over the open, key-free abgeordnetenwatch.de API (CC0 data) via the abgeordnetenwatch-cli.",
       "author": {
@@ -71,7 +71,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/autobahn-cli",
-        "ref": "v0.0.7"
+        "ref": "v0.0.8"
       },
       "description": "Brief motorway disruptions before a drive, plan EV charging stops along a route, and export any Autobahn service as GeoJSON — all over the open, key-free Autobahn App API via the autobahn-cli.",
       "author": {
@@ -99,7 +99,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/bundeshaushalt-cli",
-        "ref": "v0.0.6"
+        "ref": "v0.0.7"
       },
       "description": "Break the German federal budget down by ministry, economic group or function, compare planned vs. realised (Soll/Ist) figures, and build multi-year spending trends — all over the open, key-free bundeshaushalt.de portal via the bundeshaushalt-cli.",
       "author": {
@@ -127,7 +127,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/bundesrat-cli",
-        "ref": "v0.0.6"
+        "ref": "v0.0.7"
       },
       "description": "Follow the Bundesrat: the current plenary sitting's agenda and Drucksachen, the members (by Land or party), and committee dates — via the bundesrat-cli. Surfaces only openly-licensed data.",
       "author": {
@@ -181,7 +181,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/destatis-genesis-cli",
-        "ref": "v0.0.5"
+        "ref": "v0.0.6"
       },
       "description": "Find the right official-statistics object, fetch and decode its data, and export tables to CSV/Excel — over the DESTATIS GENESIS-Online API via the destatis-genesis-cli.",
       "author": {
@@ -208,7 +208,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/deutsche-digitale-bibliothek-cli",
-        "ref": "v0.0.4"
+        "ref": "v0.0.5"
       },
       "description": "Search Germany's digitised cultural heritage, explore facet distributions, and fetch an object's full detail — over the public v2 Deutsche Digitale Bibliothek API via the deutsche-digitale-bibliothek-cli. No API key required.",
       "author": {
@@ -236,7 +236,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/dip-bundestag-cli",
-        "ref": "v0.0.8"
+        "ref": "v0.0.9"
       },
       "description": "Track a Bundestag legislative procedure end to end, profile a member, and digest Drucksachen / Plenarprotokolle with full text — all over the Bundestag DIP API via the dip-bundestag-cli.",
       "author": {
@@ -264,7 +264,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/dwd-cli",
-        "ref": "v0.0.7"
+        "ref": "v0.0.8"
       },
       "description": "Brief the current German weather warnings, decode a DWD station forecast into real units, export warning areas as GeoJSON, and cross-check official warnings against crowd reports — all over the open, key-free DWD Warnwetter app API via the dwd-cli.",
       "author": {
@@ -320,7 +320,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/fim-portal-cli",
-        "ref": "v0.0.9"
+        "ref": "v0.0.10"
       },
       "description": "Assemble service dossiers, lay out data-schema form blueprints, audit schema quality, and find reusable data fields — all over the open, key-free FIM Portal API via the fim-portal-cli.",
       "author": {
@@ -350,7 +350,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/fit-connect-cli",
-        "ref": "v0.0.5"
+        "ref": "v0.0.6"
       },
       "description": "Resolve which German authority is responsible for a public service in a given place, look up area codes (ags/ars/areaId), and build citizen-facing service briefings — all over the open, key-free FIT-Connect Routing API via the fit-connect-cli.",
       "author": {
@@ -377,7 +377,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/fragdenstaat-cli",
-        "ref": "v0.0.7"
+        "ref": "v0.0.8"
       },
       "description": "Find and analyse FOI requests, look up the right authority, explore the German FOI legal landscape, and dig out and export released documents — all over the public, key-free FragDenStaat.de API via the fragdenstaat-cli.",
       "author": {
@@ -408,7 +408,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/govdata-cli",
-        "ref": "v0.0.6"
+        "ref": "v0.0.7"
       },
       "description": "Find and rank open German government datasets, build catalogue statistics with CKAN facets, and harvest downloadable resources into a manifest — all over the open, key-free GovData CKAN API via the govdata-cli.",
       "author": {
@@ -436,7 +436,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/hochwasserzentralen-cli",
-        "ref": "v0.0.3"
+        "ref": "v0.0.4"
       },
       "description": "Check Germany's official flood warnings and the flood classification at ~1200 gauges, get a per-state situation overview, and export warning areas or gauges as GeoJSON — all over the open, key-free LHP-PublicAPI via the hochwasserzentralen-cli.",
       "author": {
@@ -493,7 +493,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/ladesaeulenregister-cli",
-        "ref": "v0.0.4"
+        "ref": "v0.0.5"
       },
       "description": "Find, count and map public EV charging stations in Germany — by place, operator, connector, capacity or nearby a point — from the Bundesnetzagentur's Ladesäulenregister, via the ladesaeulenregister-cli.",
       "author": {
@@ -520,7 +520,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/lebensmittelwarnung-cli",
-        "ref": "v0.0.3"
+        "ref": "v0.0.4"
       },
       "description": "Check Germany's official product-recall portal: current warnings (Rückrufe) by product, federal state, product type and recall reason — via the lebensmittel CLI over the official RSS feeds.",
       "author": {
@@ -547,7 +547,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/lobbyregister-cli",
-        "ref": "v0.0.7"
+        "ref": "v0.0.8"
       },
       "description": "Profile who lobbies the Bundestag on a topic, rank registered lobbyists by declared spend or by legislative-engagement volume, track new registrations and deregistrations over time, and surface the revolving door of former MdBs and government officials — all over the open, key-free Lobbyregister search API via the lobbyregister-cli.",
       "author": {
@@ -575,7 +575,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/luftqualitaet-cli",
-        "ref": "v0.0.6"
+        "ref": "v0.0.7"
       },
       "description": "Find the right air-quality monitoring station for a place, brief the current air-quality index for a station, and rank stations by annual pollutant levels or limit exceedances — all over the open, key-free Umweltbundesamt Air Data API via the luftqualitaet-cli.",
       "author": {
@@ -605,7 +605,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/marktstammdatenregister-cli",
-        "ref": "v0.0.4"
+        "ref": "v0.0.5"
       },
       "description": "Search and count German electricity & gas units — solar, wind, storage, CHP — in the Bundesnetzagentur's Marktstammdatenregister (MaStR), with the filter-syntax and record-reading help, via the marktstammdatenregister-cli.",
       "author": {
@@ -634,7 +634,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/mudab-cli",
-        "ref": "v0.0.4"
+        "ref": "v0.0.5"
       },
       "description": "Explore German marine-monitoring data — stations, measured parameters, measurements and HELCOM PLC river loads for the North and Baltic Sea — over the MUDAB (Meeresumweltdatenbank) API via the mudab-cli.",
       "author": {
@@ -663,7 +663,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/nina-warnungen-cli",
-        "ref": "v0.0.5"
+        "ref": "v0.0.6"
       },
       "description": "Brief Germany's live civil-protection warnings across all NINA sources, watch a specific region by its ARS/AGS key, and export a warning's affected area as GeoJSON — all over the open, key-free NINA API via the nina-warnungen-cli.",
       "author": {
@@ -693,7 +693,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/pegel-online-cli",
-        "ref": "v0.0.5"
+        "ref": "v0.0.6"
       },
       "description": "Check live water levels and flood/low-water state at any German federal-waterway gauge, get a whole-river overview, analyse level trends, and export gauges as GeoJSON — all over the open, key-free PEGELONLINE API via the pegel-online-cli.",
       "author": {
@@ -750,7 +750,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/regionalstatistik-cli",
-        "ref": "v0.0.4"
+        "ref": "v0.0.5"
       },
       "description": "Find the right regional-statistics object, fetch and decode its data by Kreis or Gemeinde, and export tables to CSV/Excel — over the Regionaldatenbank Deutschland GENESIS API via the regionalstatistik-cli.",
       "author": {
@@ -781,7 +781,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/reisewarnungen-cli",
-        "ref": "v0.0.7"
+        "ref": "v0.0.8"
       },
       "description": "Brief the German Foreign Office's travel and safety advice for a trip, rank every country currently under a warning, and diff warnings over time — all over the open, key-free Auswärtiges Amt travel-warning API via the reisewarnungen-cli.",
       "author": {
@@ -809,7 +809,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/smard-cli",
-        "ref": "v0.0.8"
+        "ref": "v0.0.9"
       },
       "description": "Build Germany's generation mix and renewable share, summarise day-ahead wholesale prices across bidding zones, and export gap-clean electricity time series — all over the open, key-free SMARD chart-data API via the smard-cli.",
       "author": {
@@ -839,7 +839,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/strahlenschutz-cli",
-        "ref": "v0.0.6"
+        "ref": "v0.0.7"
       },
       "description": "Rank the live ambient gamma dose rate (ODL) across Germany's ~1700 BfS stations, read a single station's time-series trend, and export the network as GeoJSON — all over the open, key-free ODL-Info WFS via the strahlenschutz-cli.",
       "author": {
@@ -867,7 +867,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/tagesschau-cli",
-        "ref": "v0.0.6"
+        "ref": "v0.0.7"
       },
       "description": "Briefings of current German headlines, regional news by Bundesland, full-text topic tracking, and live stream links — all over the open, key-free Tagesschau API via the tagesschau-cli.",
       "author": {
