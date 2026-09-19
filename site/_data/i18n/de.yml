@@ -147,6 +147,12 @@ plugins:
     Das amtliche Ergebnis der Bundestagswahl 2025 abfragen – Erst- und Zweitstimmen nach
     Bund, Land oder Wahlkreis, gefiltert nach Partei – dazu die Parteien, die 299 Wahlkreise
     und Strukturdaten, mit der bundeswahlleiterin-cli. Offene Daten (Datenlizenz Deutschland).
+  ckan: >-
+    Herausfinden, welche deutschen CKAN-Portale offene Daten zu einem Thema haben, und die
+    Treffer ordnen, Statistiken zu Herausgebern, Formaten und Lizenzen mit CKAN-Facetten
+    erstellen und im Transparenzportal Hamburg nach Verträgen, Gutachten und
+    Senatsmitteilungen suchen – über die offenen CKAN-APIs von 18 bekannten Portalen ohne
+    Schlüssel mit der ckan-cli.
   destatis-genesis: >-
     Das passende Objekt der amtlichen Statistik finden, seine Daten abrufen und aufbereiten
     und Tabellen als CSV/Excel exportieren – über die GENESIS-Online-API von DESTATIS mit der

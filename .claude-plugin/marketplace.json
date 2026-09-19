@@ -177,6 +177,34 @@
       ]
     },
     {
+      "name": "ckan",
+      "source": {
+        "source": "github",
+        "repo": "maschinenlesbar-org/ckan-cli",
+        "ref": "v0.0.3"
+      },
+      "description": "Find which German CKAN portals have open data on a topic and rank the hits, build publisher, format and licence statistics with CKAN facets, and search the Hamburg Transparenzportal's contracts, Gutachten and Senate papers — over the open, key-free CKAN APIs of 18 known portals via the ckan-cli.",
+      "author": {
+        "name": "Sebastian Schürmann",
+        "email": "sebs@2xs.org"
+      },
+      "license": "AGPL-3.0-or-later",
+      "repository": "https://github.com/maschinenlesbar-org/ckan-cli",
+      "homepage": "https://github.com/maschinenlesbar-org/ckan-cli#readme",
+      "category": "data",
+      "keywords": [
+        "ckan",
+        "open-data",
+        "opendata",
+        "catalogue",
+        "datasets",
+        "facets",
+        "transparenzportal",
+        "hamburg",
+        "germany"
+      ]
+    },
+    {
       "name": "destatis-genesis",
       "source": {
         "source": "github",

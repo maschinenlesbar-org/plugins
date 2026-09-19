@@ -1,7 +1,7 @@
 # maschinenlesbar.org plugins
 
 A [Claude Code plugin marketplace](https://code.claude.com/docs/en/plugin-marketplaces) for
-the **maschinenlesbar.org** command-line tools: 31 plugins with 97 Agent Skills, one plugin
+the **maschinenlesbar.org** command-line tools: 33 plugins with 102 Agent Skills, one plugin
 per open German public-sector API — parliament and lobbying, official statistics, weather
 and water levels, energy, public warnings, jobs, and more.
 
@@ -49,6 +49,7 @@ skills don't use those packages; they call the CLI you installed.
 | `bundeshaushalt` | [bundeshaushalt-cli](https://github.com/maschinenlesbar-org/bundeshaushalt-cli) | Break the German federal budget down by ministry, economic group or function, compare planned vs. realised (Soll/Ist) figures, and build multi-year spending trends — all over the open, key-free bundeshaushalt.de portal via the bundeshaushalt-cli. |
 | `bundesrat` | [bundesrat-cli](https://github.com/maschinenlesbar-org/bundesrat-cli) | Follow the Bundesrat: the current plenary sitting's agenda and Drucksachen, the members (by Land or party), and committee dates — via the bundesrat-cli. Surfaces only openly-licensed data. |
 | `bundeswahl` | [bundeswahlleiterin-cli](https://github.com/maschinenlesbar-org/bundeswahlleiterin-cli) | Query the official Bundestagswahl 2025 result — first/second votes by Bund, Land or Wahlkreis, filtered by party — plus the parties, the 299 constituencies and structural data, via the bundeswahlleiterin-cli. Open data (Datenlizenz Deutschland). |
+| `ckan` | [ckan-cli](https://github.com/maschinenlesbar-org/ckan-cli) | Find which German CKAN portals have open data on a topic and rank the hits, build publisher, format and licence statistics with CKAN facets, and search the Hamburg Transparenzportal's contracts, Gutachten and Senate papers — over the open, key-free CKAN APIs of 18 known portals via the ckan-cli. |
 | `destatis-genesis` | [destatis-genesis-cli](https://github.com/maschinenlesbar-org/destatis-genesis-cli) | Find the right official-statistics object, fetch and decode its data, and export tables to CSV/Excel — over the DESTATIS GENESIS-Online API via the destatis-genesis-cli. |
 | `ddb` | [deutsche-digitale-bibliothek-cli](https://github.com/maschinenlesbar-org/deutsche-digitale-bibliothek-cli) | Search Germany's digitised cultural heritage, explore facet distributions, and fetch an object's full detail — over the public v2 Deutsche Digitale Bibliothek API via the deutsche-digitale-bibliothek-cli. No API key required. |
 | `dip-bundestag` | [dip-bundestag-cli](https://github.com/maschinenlesbar-org/dip-bundestag-cli) | Track a Bundestag legislative procedure end to end, profile a member, and digest Drucksachen / Plenarprotokolle with full text — all over the Bundestag DIP API via the dip-bundestag-cli. |
