@@ -232,6 +232,10 @@ plugins:
     Aktuelle Warnungen des Bevölkerungsschutzes aus allen NINA-Quellen zusammenfassen, eine
     Region anhand ihres ARS/AGS beobachten und das betroffene Gebiet einer Warnung als GeoJSON
     exportieren – über die offene NINA-API ohne Schlüssel mit der nina-warnungen-cli.
+  oparl: >-
+    Einem Stadt- oder Gemeinderat über sein OParl-Ratsinformationssystem folgen – den
+    Endpunkt finden, dann seine Körperschaften, Sitzungen, Drucksachen und Gremien – mit der
+    oparl-cli. Offene Daten; die Lizenz hängt vom Endpunkt ab.
   pegel: >-
     Aktuelle Wasserstände und die Hoch- oder Niedrigwasserlage an jedem Pegel der
     Bundeswasserstraßen prüfen, einen Überblick über einen ganzen Fluss abrufen,
