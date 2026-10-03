@@ -777,7 +777,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/regionalatlas-cli",
-        "ref": "v0.2.0"
+        "ref": "v0.3.0"
       },
       "description": "Browse, map and compare regional-statistics indicators for Germany — by Bundesland, Regierungsbezirk, Kreis or Gemeinde — from the Regionalatlas Deutschland of the Statistische Ämter des Bundes und der Länder, via the regionalatlas-cli.",
       "author": {
@@ -805,7 +805,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/regionalstatistik-cli",
-        "ref": "v0.0.8"
+        "ref": "v0.1.0"
       },
       "description": "Find the right regional-statistics object, fetch and decode its data by Kreis or Gemeinde, and export tables to CSV/Excel — over the Regionaldatenbank Deutschland GENESIS API via the regionalstatistik-cli.",
       "author": {
