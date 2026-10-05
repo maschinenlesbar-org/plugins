@@ -748,7 +748,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/pegel-online-cli",
-        "ref": "v0.1.1"
+        "ref": "v0.3.0"
       },
       "description": "Check live water levels and flood/low-water state at any German federal-waterway gauge, get a whole-river overview, analyse level trends, and export gauges as GeoJSON — all over the open, key-free PEGELONLINE API via the pegel-online-cli.",
       "author": {
