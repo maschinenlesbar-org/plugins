@@ -691,7 +691,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/nina-warnungen-cli",
-        "ref": "v0.1.0"
+        "ref": "v0.3.0"
       },
       "description": "Brief Germany's live civil-protection warnings across all NINA sources, watch a specific region by its ARS/AGS key, and export a warning's affected area as GeoJSON — all over the open, key-free NINA API via the nina-warnungen-cli.",
       "author": {
