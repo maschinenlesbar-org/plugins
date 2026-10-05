@@ -236,7 +236,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/deutsche-digitale-bibliothek-cli",
-        "ref": "v0.0.8"
+        "ref": "v0.2.0"
       },
       "description": "Search Germany's digitised cultural heritage, explore facet distributions, and fetch an object's full detail — over the public v2 Deutsche Digitale Bibliothek API via the deutsche-digitale-bibliothek-cli. No API key required.",
       "author": {
