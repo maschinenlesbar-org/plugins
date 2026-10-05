@@ -71,7 +71,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/autobahn-cli",
-        "ref": "v0.3.0"
+        "ref": "v0.5.0"
       },
       "description": "Brief motorway disruptions before a drive, plan EV charging stops along a route, and export any Autobahn service as GeoJSON — all over the open, key-free Autobahn App API via the autobahn-cli.",
       "author": {
