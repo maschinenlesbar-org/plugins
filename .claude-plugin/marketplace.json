@@ -521,7 +521,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/ladesaeulenregister-cli",
-        "ref": "v0.0.8"
+        "ref": "v0.2.0"
       },
       "description": "Find, count and map public EV charging stations in Germany — by place, operator, connector, capacity or nearby a point — from the Bundesnetzagentur's Ladesäulenregister, via the ladesaeulenregister-cli.",
       "author": {
