@@ -836,7 +836,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/reisewarnungen-cli",
-        "ref": "v0.0.11"
+        "ref": "v0.2.0"
       },
       "description": "Brief the German Foreign Office's travel and safety advice for a trip, rank every country currently under a warning, and diff warnings over time — all over the open, key-free Auswärtiges Amt travel-warning API via the reisewarnungen-cli.",
       "author": {
