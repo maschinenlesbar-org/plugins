@@ -405,7 +405,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/fragdenstaat-cli",
-        "ref": "v0.1.0"
+        "ref": "v0.3.0"
       },
       "description": "Find and analyse FOI requests, look up the right authority, explore the German FOI legal landscape, and dig out and export released documents — all over the public, key-free FragDenStaat.de API via the fragdenstaat-cli.",
       "author": {
