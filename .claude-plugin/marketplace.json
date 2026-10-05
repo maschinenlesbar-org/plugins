@@ -378,7 +378,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/fit-connect-cli",
-        "ref": "v0.0.9"
+        "ref": "v0.2.0"
       },
       "description": "Resolve which German authority is responsible for a public service in a given place, look up area codes (ags/ars/areaId), and build citizen-facing service briefings — all over the open, key-free FIT-Connect Routing API via the fit-connect-cli.",
       "author": {
