@@ -548,7 +548,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/lebensmittelwarnung-cli",
-        "ref": "v0.3.0"
+        "ref": "v0.4.0"
       },
       "description": "Check Germany's official product-recall portal: current warnings (Rückrufe) by product, federal state, product type and recall reason — via the lebensmittel CLI over the official RSS feeds.",
       "author": {
