@@ -864,7 +864,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/smard-cli",
-        "ref": "v0.0.12"
+        "ref": "v0.2.0"
       },
       "description": "Build Germany's generation mix and renewable share, summarise day-ahead wholesale prices across bidding zones, and export gap-clean electricity time series — all over the open, key-free SMARD chart-data API via the smard-cli.",
       "author": {
