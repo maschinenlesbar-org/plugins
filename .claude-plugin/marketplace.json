@@ -603,7 +603,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/luftqualitaet-cli",
-        "ref": "v0.3.0"
+        "ref": "v0.4.0"
       },
       "description": "Find the right air-quality monitoring station for a place, brief the current air-quality index for a station, and rank stations by annual pollutant levels or limit exceedances — all over the open, key-free Umweltbundesamt Air Data API via the luftqualitaet-cli.",
       "author": {
