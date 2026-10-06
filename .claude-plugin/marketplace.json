@@ -127,7 +127,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/bundesrat-cli",
-        "ref": "v0.0.10"
+        "ref": "v0.2.0"
       },
       "description": "Follow the Bundesrat: the current plenary sitting's agenda and Drucksachen, the members (by Land or party), and committee dates — via the bundesrat-cli. Surfaces only openly-licensed data.",
       "author": {
