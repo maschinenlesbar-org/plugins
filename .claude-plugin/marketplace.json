@@ -209,7 +209,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/destatis-genesis-cli",
-        "ref": "v0.3.0"
+        "ref": "v0.4.0"
       },
       "description": "Find the right official-statistics object, fetch and decode its data, and export tables to CSV/Excel — over the DESTATIS GENESIS-Online API via the destatis-genesis-cli.",
       "author": {
