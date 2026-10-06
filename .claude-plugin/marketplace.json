@@ -493,7 +493,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/jobsuche-cli",
-        "ref": "v0.1.0"
+        "ref": "v0.3.0"
       },
       "description": "Scan the German job market for a role/region, run a ranked job hunt with full-detail enrichment, and watch a specific employer's openings — all over the open Bundesagentur für Arbeit Jobsuche API via the jobsuche-cli.",
       "author": {
