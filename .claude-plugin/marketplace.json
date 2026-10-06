@@ -464,7 +464,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/hochwasserzentralen-cli",
-        "ref": "v0.1.0"
+        "ref": "v0.3.0"
       },
       "description": "Check Germany's official flood warnings and the flood classification at ~1200 gauges, get a per-state situation overview, and export warning areas or gauges as GeoJSON — all over the open, key-free LHP-PublicAPI via the hochwasserzentralen-cli.",
       "author": {
