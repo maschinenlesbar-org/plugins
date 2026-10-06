@@ -922,7 +922,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/tagesschau-cli",
-        "ref": "v0.1.0"
+        "ref": "v0.3.0"
       },
       "description": "Briefings of current German headlines, regional news by Bundesland, full-text topic tracking, and live stream links — all over the open, key-free Tagesschau API via the tagesschau-cli.",
       "author": {
