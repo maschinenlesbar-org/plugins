@@ -193,7 +193,7 @@ plugins:
     Katalogstatistiken mit CKAN-Facetten erstellen und herunterladbare Ressourcen in einem
     Manifest sammeln – über die offene GovData-CKAN-API ohne Schlüssel mit der govdata-cli.
   hochwasser: >-
-    Amtliche Hochwasserwarnungen und die Hochwasser-Einstufung an rund 1200 Pegeln prüfen,
+    Amtliche Hochwasserwarnungen und die Hochwasser-Einstufung an rund 1600 Pegeln prüfen,
     einen Lageüberblick je Bundesland abrufen und Warngebiete oder Pegel als GeoJSON
     exportieren – über die offene LHP-PublicAPI ohne Schlüssel mit der hochwasserzentralen-cli.
   jobsuche: >-
