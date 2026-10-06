@@ -264,7 +264,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/dip-bundestag-cli",
-        "ref": "v0.2.0"
+        "ref": "v0.3.0"
       },
       "description": "Track a Bundestag legislative procedure end to end, profile a member, and digest Drucksachen / Plenarprotokolle with full text — all over the Bundestag DIP API via the dip-bundestag-cli.",
       "author": {
