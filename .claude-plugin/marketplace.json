@@ -42,7 +42,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/ausbildungssuche-cli",
-        "ref": "v0.0.9"
+        "ref": "v0.2.0"
       },
       "description": "Find apprenticeships & training near a place, brief a single offer from its id, and profile the training market across regions — over the Bundesagentur für Arbeit Ausbildungssuche API via the ausbildungssuche-cli.",
       "author": {
