@@ -181,7 +181,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/ckan-cli",
-        "ref": "v0.0.6"
+        "ref": "v0.2.0"
       },
       "description": "Find which German CKAN portals have open data on a topic and rank the hits, build publisher, format and licence statistics with CKAN facets, and search the Hamburg Transparenzportal's contracts, Gutachten and Senate papers — over the open, key-free CKAN APIs of 18 known portals via the ckan-cli.",
       "author": {
