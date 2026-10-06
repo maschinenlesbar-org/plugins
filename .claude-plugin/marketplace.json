@@ -894,7 +894,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/strahlenschutz-cli",
-        "ref": "v0.1.0"
+        "ref": "v0.3.0"
       },
       "description": "Rank the live ambient gamma dose rate (ODL) across Germany's ~1700 BfS stations, read a single station's time-series trend, and export the network as GeoJSON — all over the open, key-free ODL-Info WFS via the strahlenschutz-cli.",
       "author": {
