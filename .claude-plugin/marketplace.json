@@ -320,7 +320,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/entgeltatlas-cli",
-        "ref": "v0.0.8"
+        "ref": "v0.2.0"
       },
       "description": "Look up what a German occupation earns, compare salaries across gender/region/level, and resolve the KldB and dimension codes — over the Bundesagentur für Arbeit Entgeltatlas API via the entgeltatlas-cli.",
       "author": {
