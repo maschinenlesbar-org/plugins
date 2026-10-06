@@ -292,7 +292,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/dwd-cli",
-        "ref": "v0.2.0"
+        "ref": "v0.3.0"
       },
       "description": "Brief the current German weather warnings, decode a DWD station forecast into real units, export warning areas as GeoJSON, and cross-check official warnings against crowd reports — all over the open, key-free DWD Warnwetter app API via the dwd-cli.",
       "author": {
