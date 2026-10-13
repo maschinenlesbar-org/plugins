@@ -1,7 +1,7 @@
 name: Pages
 
 # Builds the marketplace website from site/ with Jekyll and deploys it to GitHub
-# Pages (https://maschinenlesbar-org.github.io/plugins/). The banira components
+# Pages (https://maschinenlesbar.org/plugins/). The banira components
 # are smoke-tested, linted and compiled, Fylgja's stylesheets are vendored from
 # npm, and one page per plugin is generated from .claude-plugin/marketplace.json
 # by cloning each plugin's repository at its pinned tag. Nothing is committed:

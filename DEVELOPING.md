@@ -92,8 +92,8 @@ npm install --prefix tools/validate --package-lock-only --save-exact @anthropic-
 ## Website
 
 `site/` is a [Jekyll](https://jekyllrb.com/) site in English and German, deployed by
-`pages.yml` to <https://maschinenlesbar-org.github.io/plugins/> (English) and
-<https://maschinenlesbar-org.github.io/plugins/de/> (German) on every push to `main` that
+`pages.yml` to <https://maschinenlesbar.org/plugins/> (English) and
+<https://maschinenlesbar.org/plugins/de/> (German) on every push to `main` that
 touches `site/` or the marketplace.
 
 ```
