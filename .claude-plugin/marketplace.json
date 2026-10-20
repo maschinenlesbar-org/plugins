@@ -14,7 +14,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/abgeordnetenwatch-cli",
-        "ref": "v0.0.10"
+        "ref": "v0.7.0"
       },
       "description": "Pull a politician's roll-call voting record, surface disclosed side income, and break down how a parliament voted on a bill — all over the open, key-free abgeordnetenwatch.de API (CC0 data) via the abgeordnetenwatch-cli.",
       "author": {
