@@ -348,7 +348,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/fim-portal-cli",
-        "ref": "v0.0.12"
+        "ref": "v0.7.0"
       },
       "description": "Assemble service dossiers, lay out data-schema form blueprints, audit schema quality, and find reusable data fields — all over the open, key-free FIM Portal API via the fim-portal-cli.",
       "author": {
@@ -405,7 +405,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/fragdenstaat-cli",
-        "ref": "v0.6.0"
+        "ref": "v0.7.0"
       },
       "description": "Find and analyse FOI requests, look up the right authority, explore the German FOI legal landscape, and dig out and export released documents — all over the public, key-free FragDenStaat.de API via the fragdenstaat-cli.",
       "author": {
@@ -691,7 +691,7 @@
       "source": {
         "source": "github",
         "repo": "maschinenlesbar-org/nina-warnungen-cli",
-        "ref": "v0.6.0"
+        "ref": "v0.7.0"
       },
       "description": "Brief Germany's live civil-protection warnings across all NINA sources, watch a specific region by its ARS/AGS key, and export a warning's affected area as GeoJSON — all over the open, key-free NINA API via the nina-warnungen-cli.",
       "author": {
