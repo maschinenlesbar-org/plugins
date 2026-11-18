@@ -7,6 +7,8 @@ name: English
 
 site:
   title: maschinenlesbar.org plugins
+  # The home page's <title>.
+  home_title: "Claude Code plugins for German public-sector APIs — maschinenlesbar.org"
   description: >-
     Claude Code plugins for open German public-sector APIs — parliament, statistics,
     weather, water levels, energy, warnings and more, each driving a maschinenlesbar.org CLI.
@@ -92,6 +94,20 @@ plugin:
   license: License
   data_terms: Data terms
   keywords: Keywords
+
+# For search engines and link previews: the Open Graph locale, and the alt text of the
+# preview image, which the organisation website serves (assets/img/social-<lang>.png).
+meta:
+  locale: en_US
+  image_alt: "maschinenlesbar.org: German public-sector information, searchable and machine-readable."
+
+notfound:
+  title: Page not found
+  text: >-
+    There is no plugin page at this address. The plugin may have been renamed, or the link
+    may have a typo in it.
+  home: All plugins
+  org: maschinenlesbar.org
 
 footer:
   marketplace: >-

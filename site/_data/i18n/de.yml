@@ -7,6 +7,7 @@ name: Deutsch
 
 site:
   title: maschinenlesbar.org Plugins
+  home_title: "Plugins für Claude Code zu APIs aus Staat und Verwaltung — maschinenlesbar.org"
   description: >-
     Claude-Code-Plugins für offene APIs aus Staat und Verwaltung in Deutschland – Parlament,
     Statistik, Wetter, Pegelstände, Energie, Warnungen und mehr, jeweils mit einer CLI von
@@ -97,6 +98,18 @@ plugin:
   license: Lizenz
   data_terms: Datenbedingungen
   keywords: Schlagwörter
+
+meta:
+  locale: de_DE
+  image_alt: "maschinenlesbar.org: Staat und Verwaltung, durchsuchbar und maschinenlesbar."
+
+notfound:
+  title: Seite nicht gefunden
+  text: >-
+    Unter dieser Adresse gibt es keine Plugin-Seite. Vielleicht wurde das Plugin umbenannt,
+    oder der Link enthält einen Tippfehler.
+  home: Alle Plugins
+  org: maschinenlesbar.org
 
 footer:
   marketplace: >-

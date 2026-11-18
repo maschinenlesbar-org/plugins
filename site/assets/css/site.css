@@ -289,3 +289,11 @@ copy-command pre {
     margin-block-start: 0.75rem;
   }
 }
+
+/* A row of links, e.g. on the 404 page */
+
+.link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+}

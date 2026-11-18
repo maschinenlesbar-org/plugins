@@ -1,0 +1,36 @@
+{%- comment -%}
+  schema.org JSON-LD: the marketplace as a WebSite on the home pages, each plugin as a
+  SoftwareApplication on its page, both published by the organisation that
+  maschinenlesbar.org's own website describes (same @id). Called from default.html, which
+  sets `desc` and `image`.
+{%- endcomment -%}
+{%- capture publisher %}{"@type": "Organization", "@id": {{ site.org_url | append: '#organization' | jsonify }}, "name": "maschinenlesbar.org", "url": {{ site.org_url | jsonify }}}{% endcapture -%}
+{%- if page.layout == "home" %}
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "WebSite",
+    "name": {{ t.site.title | jsonify }},
+    "description": {{ desc | jsonify }},
+    "url": {{ page.url | absolute_url | jsonify }},
+    "inLanguage": {{ page.lang | jsonify }},
+    "image": {{ image | jsonify }},
+    "publisher": {{ publisher }}
+  }
+  </script>
+{%- elsif page.layout == "plugin" %}
+  {%- assign p = page.plugin %}
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "SoftwareApplication",
+    "name": {{ p.name | jsonify }},
+    "description": {{ desc | jsonify }},
+    "url": {{ page.url | absolute_url | jsonify }},
+    "inLanguage": {{ page.lang | jsonify }},
+    "image": {{ image | jsonify }},
+    "applicationCategory": "DeveloperApplication",
+    "applicationSubCategory": "Claude Code plugin",
+    "softwareVersion": {{ p.version | jsonify }},
+    "sameAs": [{{ "https://github.com/" | append: p.repo | jsonify }}],
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"},
+    "publisher": {{ publisher }}
+  }
+  </script>
+{%- endif %}
