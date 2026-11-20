@@ -17,6 +17,7 @@ nav:
   label: Hauptnavigation
   plugins: Plugins
   install: Installation
+  mcp: MCP
   github: GitHub
   language: Sprache
   skip: Zum Inhalt springen
@@ -27,7 +28,8 @@ hero:
   intro: >-
     %plugins% Plugins mit %skills% Skills bringen Claude bei, die Kommandozeilen-Werkzeuge
     von maschinenlesbar.org zu nutzen – für Bundestag und Bundesrat, amtliche Statistik,
-    Wetter und Pegelstände, Energie, Warnungen, Stellenangebote und mehr.
+    Wetter und Pegelstände, Energie, Warnungen, Stellenangebote und mehr. Jedes Werkzeug
+    gibt es auch als MCP-Server, für Claude und jeden anderen MCP-Client.
 
 install:
   title: Installation
@@ -49,6 +51,7 @@ install:
 catalogue:
   title: Plugins
   meta: "%skills% Skills · CLI <code>%bin%</code>"
+  mcp: MCP-Server
 
 filter:
   placeholder: Nach Name, Thema oder API filtern…
@@ -58,6 +61,19 @@ filter:
   total_format: "%total% Plugins"
   count_format: "%visible% von %total% Plugins"
   empty: Kein Plugin gefunden.
+
+mcp:
+  title: MCP-Server
+  text: >-
+    Zu jeder API gibt es auch einen MCP-Server: dieselben Befehle als MCP-Tools, gebaut auf
+    demselben Client wie die CLI. Nutzbar in Claude Code, Claude Desktop und jedem anderen
+    MCP-Client. Installieren Sie ihn von npm und fügen Sie ihn Claude Code hinzu:
+  image: "Oder starten Sie ihn als Container-Image, ohne etwas außer Docker zu installieren:"
+  note: >-
+    Die Seite jedes Plugins zeigt die Befehle für seinen Server. Die Images auf
+    <code>ghcr.io</code> gibt es für mehrere Architekturen, mit signierter Provenienz; jedes
+    GitHub-Release enthält die SBOMs, und veröffentlichte Releases lassen sich nicht mehr
+    ändern.
 
 copy:
   label: Kopieren
@@ -76,7 +92,7 @@ data:
     Die Daten stammen von den öffentlichen Stellen hinter der jeweiligen API und unterliegen
     deren Bedingungen – gemeinfrei, Lizenzen mit Namensnennung oder eigene
     Nutzungsbedingungen –, dokumentiert in <code>DATA_LICENSE.md</code> im Repository des
-    jeweiligen Plugins. Plugins und CLIs stehen unter AGPL-3.0-or-later oder einer
+    jeweiligen Plugins. Plugins, CLIs und MCP-Server stehen unter AGPL-3.0-or-later oder einer
     kommerziellen Lizenz.
 
 plugin:
@@ -85,6 +101,18 @@ plugin:
   add_marketplace: "Marketplace hinzufügen (einmalig):"
   install_plugin: "Plugin installieren:"
   requirements: Voraussetzungen wie API-Schlüssel oder Konten stehen in <a href="%url%">SKILLS.md</a>.
+  mcp_title: MCP-Server
+  mcp_intro: >-
+    Dieselben Befehle als MCP-Tools, für Claude Code oder jeden anderen MCP-Client – ohne
+    Plugin und ohne CLI.
+  mcp_install: "Server <code>%bin%</code> installieren:"
+  mcp_add: "In Claude Code hinzufügen:"
+  mcp_image: "Oder stattdessen das Container-Image starten:"
+  mcp_note: >-
+    Andere Clients, den HTTP-Transport, die Optionen und nötige Zugangsdaten beschreibt
+    <a href="%url%">MCP.md</a> (englisch).
+  mcp_server: MCP-Server
+  container_image: Container-Image
   skills_title: Skills
   skills_note: >-
     Die Beschreibungen der Skills sind englisch – Claude wählt anhand dieser Texte den

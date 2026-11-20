@@ -11,7 +11,8 @@ and how to read their JSON; they don't call the APIs themselves.
 
 **Website:** <https://maschinenlesbar.org/plugins/> (English) ·
 <https://maschinenlesbar.org/plugins/de/> (Deutsch) — a searchable catalogue with a
-page per plugin listing its skills and install commands.
+page per plugin listing its skills and install commands, and the commands for the API's
+MCP server (on npm and as a container image on `ghcr.io`), which works without the plugin.
 
 ## Install
 

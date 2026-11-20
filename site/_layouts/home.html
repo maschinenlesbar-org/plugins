@@ -39,6 +39,16 @@ layout: default
   <p class="note">{{ t.install.note | replace: "%name%", m.name }}</p>
 </section>
 
+<section id="mcp" class="flow">
+  <h2>{{ t.mcp.title }}</h2>
+  <p>{{ t.mcp.text }}</p>
+  {% include copy.html code="npm i -g @maschinenlesbar.org/fim-portal-mcp" %}
+  {% include copy.html code="claude mcp add fim-portal -- fim-portal-mcp" %}
+  <p>{{ t.mcp.image }}</p>
+  {% include copy.html code="claude mcp add fim-portal -- docker run -i --rm ghcr.io/maschinenlesbar-org/fim-portal-mcp:latest" %}
+  <p class="note">{{ t.mcp.note }}</p>
+</section>
+
 <section id="plugins" class="flow">
   <h2>{{ t.catalogue.title }}</h2>
   <plugin-filter
@@ -59,7 +69,7 @@ layout: default
             <span class="badge">{{ l.category }}</span>
           </div>
           <p{% if l.description_lang %} lang="{{ l.description_lang }}"{% endif %}>{{ l.description | escape }}</p>
-          <p class="meta">{{ t.catalogue.meta | replace: "%skills%", p.skills.size | replace: "%bin%", p.bin }}</p>
+          <p class="meta">{{ t.catalogue.meta | replace: "%skills%", p.skills.size | replace: "%bin%", p.bin }}{% if p.mcp %} · {{ t.catalogue.mcp }}{% endif %}</p>
         </article>
       </li>
       {%- endfor %}

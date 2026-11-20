@@ -2,8 +2,10 @@
 #
 # For every entry it shallow-clones the plugin's repository at its pinned tag
 # (cached under .cache/repos/<name>@<ref>, so a ref bump re-clones), reads
-# .claude-plugin/plugin.json, package.json and the front matter of every
-# skills/*/SKILL.md, and exposes the result as site.data["marketplace"].
+# .claude-plugin/plugin.json, the CLI's package.json (apps/cli, or the root of a repo
+# from before the workspace layout), the MCP server's (apps/mcp, if there is one) and
+# the front matter of every skills/*/SKILL.md, and exposes the result as
+# site.data["marketplace"].
 #
 # The site is built in every language listed under `languages` in _config.yml,
 # with strings from _data/i18n/<lang>.yml. It renders one page per plugin per
@@ -117,22 +119,43 @@ module Marketplace
       clone("#{git_base}/#{source["repo"]}.git", source["ref"], dir) unless File.directory?(dir)
 
       plugin_json = JSON.parse(File.read(File.join(dir, ".claude-plugin/plugin.json")))
-      package_json = JSON.parse(File.read(File.join(dir, "package.json")))
-      bin = package_json["bin"].is_a?(Hash) ? package_json["bin"].keys.first : package_json["name"]
+      cli = package(dir, "apps/cli") || package(dir, ".")
+      raise Jekyll::Errors::FatalException, "#{entry["name"]}: no package.json with a bin" unless cli
+      mcp = package(dir, "apps/mcp")
       blob = "https://github.com/#{source["repo"]}/blob/#{source["ref"]}"
 
       entry.merge(
         "repo" => source["repo"],
         "ref" => source["ref"],
         "version" => plugin_json["version"],
-        "package" => package_json["name"],
-        "bin" => bin,
+        "package" => cli["package"],
+        "bin" => cli["bin"],
+        "mcp" => mcp && mcp.merge(
+          # The server's short name in a client's config: the topic, as in MCP.md.
+          "server" => mcp["bin"].delete_suffix("-mcp"),
+          # The image is named after the package, not the (often shorter) command.
+          "image_name" => mcp["package"].split("/").last,
+          "image" => "ghcr.io/#{source["repo"].split("/").first}/#{mcp["package"].split("/").last}",
+          "readme_url" => "#{blob}/MCP.md",
+        ),
         "skills_url" => "#{blob}/SKILLS.md",
         "data_license_url" => (File.exist?(File.join(dir, "DATA_LICENSE.md")) ? "#{blob}/DATA_LICENSE.md" : nil),
         "skills" => skills(dir),
         "search" => [entry["name"], entry["description"], entry["category"], *entry["keywords"], source["repo"]]
           .compact.join(" ").downcase,
       )
+    end
+
+    # The published package in a workspace folder (apps/cli, apps/mcp; "." for a repo from
+    # before the workspace layout): its name, version and first bin. nil when the folder has
+    # no package.json or the package has no bin (a private workspace root).
+    def package(dir, folder)
+      file = File.join(dir, folder, "package.json")
+      return nil unless File.exist?(file)
+
+      json = JSON.parse(File.read(file))
+      bin = json["bin"].is_a?(Hash) ? json["bin"].keys.first : (json["bin"] && json["name"].split("/").last)
+      bin && { "package" => json["name"], "version" => json["version"], "bin" => bin }
     end
 
     def clone(url, ref, dir)

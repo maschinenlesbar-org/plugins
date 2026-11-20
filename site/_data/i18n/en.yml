@@ -17,6 +17,7 @@ nav:
   label: Main
   plugins: Plugins
   install: Install
+  mcp: MCP
   github: GitHub
   language: Language
   skip: Skip to content
@@ -27,7 +28,8 @@ hero:
   intro: >-
     %plugins% plugins with %skills% skills teach Claude to use the maschinenlesbar.org
     command-line tools — for the Bundestag and Bundesrat, official statistics, weather and
-    water levels, energy, public warnings, jobs and more.
+    water levels, energy, public warnings, jobs and more. Every tool also comes as an MCP
+    server, for Claude and any other MCP client.
 
 install:
   title: Install
@@ -48,6 +50,7 @@ install:
 catalogue:
   title: Plugins
   meta: "%skills% skills · <code>%bin%</code> CLI"
+  mcp: MCP server
 
 filter:
   placeholder: Filter by name, topic or API…
@@ -57,6 +60,18 @@ filter:
   total_format: "%total% plugins"
   count_format: "%visible% of %total% plugins"
   empty: No plugin matches.
+
+mcp:
+  title: MCP servers
+  text: >-
+    Every API also has an MCP server: the same commands as MCP tools, built on the same
+    client as the CLI. Use it from Claude Code, Claude Desktop or any other MCP client.
+    Install one from npm and add it to Claude Code:
+  image: "Or run it as a container image instead, with nothing installed but Docker:"
+  note: >-
+    Each plugin's page shows the commands for its server. The images on
+    <code>ghcr.io</code> are multi-arch, with signed provenance; each GitHub release carries
+    the SBOMs, and releases can't be changed after they are published.
 
 copy:
   label: Copy
@@ -74,8 +89,8 @@ data:
   text: >-
     The data comes from the public bodies behind each API, under their own terms — public
     domain, attribution licences or custom provider terms — documented in
-    <code>DATA_LICENSE.md</code> in each plugin's repository. The plugins and CLIs are
-    dual-licensed AGPL-3.0-or-later or commercial.
+    <code>DATA_LICENSE.md</code> in each plugin's repository. The plugins, CLIs and MCP
+    servers are dual-licensed AGPL-3.0-or-later or commercial.
 
 plugin:
   breadcrumb: Breadcrumb
@@ -83,6 +98,18 @@ plugin:
   add_marketplace: "Add the marketplace (once):"
   install_plugin: "Install the plugin:"
   requirements: Requirements such as API keys or accounts are listed in <a href="%url%">SKILLS.md</a>.
+  mcp_title: MCP server
+  mcp_intro: >-
+    The same commands as MCP tools, for Claude Code or any other MCP client, without the
+    plugin or the CLI.
+  mcp_install: "Install the <code>%bin%</code> server:"
+  mcp_add: "Add it to Claude Code:"
+  mcp_image: "Or run the container image instead:"
+  mcp_note: >-
+    Other clients, the HTTP transport, the options and any credentials are described in
+    <a href="%url%">MCP.md</a>.
+  mcp_server: MCP server
+  container_image: Container image
   skills_title: Skills
   skills_note: ""
   details_title: Details

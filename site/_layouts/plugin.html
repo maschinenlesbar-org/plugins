@@ -43,6 +43,29 @@ layout: default
     <p class="note">{{ t.plugin.requirements | replace: "%url%", p.skills_url }}</p>
   </section>
 
+  {%- if p.mcp %}
+  <section id="mcp" class="flow">
+    <h2>{{ t.plugin.mcp_title }}</h2>
+    <p>{{ t.plugin.mcp_intro }}</p>
+    <ol class="install flow">
+      <li class="flow">
+        <p>{{ t.plugin.mcp_install | replace: "%bin%", p.mcp.bin }}</p>
+        {%- capture mcp_install %}npm i -g {{ p.mcp.package }}{% endcapture %}
+        {% include copy.html code=mcp_install %}
+      </li>
+      <li class="flow">
+        <p>{{ t.plugin.mcp_add }}</p>
+        {%- capture mcp_add %}claude mcp add {{ p.mcp.server }} -- {{ p.mcp.bin }}{% endcapture %}
+        {% include copy.html code=mcp_add %}
+      </li>
+    </ol>
+    <p>{{ t.plugin.mcp_image }}</p>
+    {%- capture mcp_image %}claude mcp add {{ p.mcp.server }} -- docker run -i --rm {{ p.mcp.image }}:{{ p.mcp.version }}{% endcapture %}
+    {% include copy.html code=mcp_image %}
+    <p class="note">{{ t.plugin.mcp_note | replace: "%url%", p.mcp.readme_url }}</p>
+  </section>
+  {%- endif %}
+
   <section class="flow">
     <h2>{{ t.plugin.skills_title }}</h2>
     {%- if t.plugin.skills_note != "" %}
@@ -65,6 +88,12 @@ layout: default
       <dd><a href="https://github.com/{{ p.repo }}">{{ p.repo }}</a></dd>
       <dt>{{ t.plugin.cli }}</dt>
       <dd><a href="https://www.npmjs.com/package/{{ p.package }}">{{ p.package }}</a> ({{ t.plugin.command }} <code>{{ p.bin }}</code>)</dd>
+      {%- if p.mcp %}
+      <dt>{{ t.plugin.mcp_server }}</dt>
+      <dd><a href="https://www.npmjs.com/package/{{ p.mcp.package }}">{{ p.mcp.package }}</a> ({{ t.plugin.command }} <code>{{ p.mcp.bin }}</code>)</dd>
+      <dt>{{ t.plugin.container_image }}</dt>
+      <dd><a href="https://github.com/{{ p.repo }}/pkgs/container/{{ p.mcp.image_name }}"><code>{{ p.mcp.image }}</code></a></dd>
+      {%- endif %}
       <dt>{{ t.plugin.version }}</dt>
       <dd>{{ p.version }}, {{ t.plugin.from_tag }} <a href="https://github.com/{{ p.repo }}/tree/{{ p.ref }}">{{ p.ref }}</a></dd>
       <dt>{{ t.plugin.license }}</dt>

@@ -110,8 +110,8 @@ site/scripts/vendor-css.mjs    copies the pinned Fylgja stylesheets into assets/
 ```
 
 - **Content comes from the plugins.** Descriptions, categories and keywords come from the
-  marketplace entries; the skill list, plugin version and CLI package from each repo at its
-  pinned tag. Apart from the German translations, nothing plugin-specific is written by hand,
+  marketplace entries; the skill list, plugin version, CLI package and MCP server (package,
+  command, image) from each repo at its pinned tag. Apart from the German translations, nothing plugin-specific is written by hand,
   so updating the marketplace updates the site.
 - **Translations.** `_data/i18n/en.yml` and `de.yml` must have the same interface keys; the
   build fails when they differ. The German plugin descriptions (`plugins:`) and category names
@@ -138,7 +138,7 @@ npm run serve        # http://127.0.0.1:4000/plugins/
 npm run build        # into site/_site/
 ```
 
-The first build clones all 31 plugin repositories into `site/.cache/`; later builds reuse
+The first build clones all 33 plugin repositories into `site/.cache/`; later builds reuse
 them until a `ref` changes.
 
 ## Why the plugins sit at the CLI repo root

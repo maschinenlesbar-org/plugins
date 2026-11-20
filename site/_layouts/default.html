@@ -77,6 +77,7 @@
       <ul role="list">
         <li><a href="{{ home | append: '#plugins' | relative_url }}">{{ t.nav.plugins }}</a></li>
         <li><a href="{{ home | append: '#install' | relative_url }}">{{ t.nav.install }}</a></li>
+        <li><a href="{{ home | append: '#mcp' | relative_url }}">{{ t.nav.mcp }}</a></li>
         <li><a href="https://github.com/{{ site.repository }}">{{ t.nav.github }}</a></li>
         {%- for alt in alternates %}
         {%- unless alt.lang == page.lang %}
