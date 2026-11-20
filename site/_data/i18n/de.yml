@@ -65,8 +65,8 @@ filter:
 mcp:
   title: MCP-Server
   text: >-
-    Zu jeder API gibt es auch einen MCP-Server: dieselben Befehle als MCP-Tools, gebaut auf
-    demselben Client wie die CLI. Nutzbar in Claude Code, Claude Desktop und jedem anderen
+    Zu jeder API gibt es auch einen MCP-Server: Tools für die Fragen, die Agenten stellen,
+    gebaut auf demselben Client wie die CLI. Nutzbar in Claude Code, Claude Desktop und jedem anderen
     MCP-Client. Installieren Sie ihn von npm und fügen Sie ihn Claude Code hinzu:
   image: "Oder starten Sie ihn als Container-Image, ohne etwas außer Docker zu installieren:"
   note: >-
@@ -103,8 +103,8 @@ plugin:
   requirements: Voraussetzungen wie API-Schlüssel oder Konten stehen in <a href="%url%">SKILLS.md</a>.
   mcp_title: MCP-Server
   mcp_intro: >-
-    Dieselben Befehle als MCP-Tools, für Claude Code oder jeden anderen MCP-Client – ohne
-    Plugin und ohne CLI.
+    Tools für die Fragen, die Agenten stellen, gebaut auf demselben Client wie die CLI, für
+    Claude Code oder jeden anderen MCP-Client. Plugin und CLI braucht er nicht.
   mcp_install: "Server <code>%bin%</code> installieren:"
   mcp_add: "In Claude Code hinzufügen:"
   mcp_image: "Oder stattdessen das Container-Image starten:"

@@ -64,8 +64,8 @@ filter:
 mcp:
   title: MCP servers
   text: >-
-    Every API also has an MCP server: the same commands as MCP tools, built on the same
-    client as the CLI. Use it from Claude Code, Claude Desktop or any other MCP client.
+    Every API also has an MCP server: tools for the questions agents ask, built on the
+    same client as the CLI. Use it from Claude Code, Claude Desktop or any other MCP client.
     Install one from npm and add it to Claude Code:
   image: "Or run it as a container image instead, with nothing installed but Docker:"
   note: >-
@@ -100,8 +100,8 @@ plugin:
   requirements: Requirements such as API keys or accounts are listed in <a href="%url%">SKILLS.md</a>.
   mcp_title: MCP server
   mcp_intro: >-
-    The same commands as MCP tools, for Claude Code or any other MCP client, without the
-    plugin or the CLI.
+    Tools for the questions agents ask, built on the same client as the CLI, for Claude
+    Code or any other MCP client. It needs neither the plugin nor the CLI.
   mcp_install: "Install the <code>%bin%</code> server:"
   mcp_add: "Add it to Claude Code:"
   mcp_image: "Or run the container image instead:"
